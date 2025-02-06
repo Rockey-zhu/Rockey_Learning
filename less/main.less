@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/*注释一*/
+//注释二
+@height:100px;
+div{
+    height: 100px;
+    width: 200px;
+    .border;
+}
+//基本混合
+.border{
+    border: 2px solid black;
+}
+
+//带参数混合
+.border_02(@border_width){
+    border: @border_width solid black;
+}
+
+.border_02_test{
+    .border_02(10px);
+}
+
+//带默认参数混合
+.border_03(@border_width:10px,@color:black){
+    border: @border_width solid @color;
+}
+.border_03_test1{
+    .border_03();
+}
+.border_03_test2{
+    .border_03(20px,red);
+}
+//只有通过/**/注释的语句编译后仍然存在，而通过//注释的语句不在了
+
+//带默认参数的混合型调用时，如果不设置参数，则使用默认参数； 
+//不带默认参数的混合型调用时必须设置参数，否则报错
+
+.radius(@top:5px,@right:5px,@bottom:5px,@left:5px){
+    -webkit-border-radius: @top @right @bottom @left;
+    -moz-border-radius: @top @right @bottom @left;
+    border-radius: @top @right @bottom @left;
+}
+
+.radius_test1{
+    .radius();
+}
+.radius_test2{
+    .radius(1px,2px,3px,4px);
+}
+.triangle(top,@width:10px,@color:rgb(255, 0, 0)){
+    border-width: @width;
+    border-color:transparent transparent @color transparent;
+    border-style: dashed dashed solid dashed;
+}
+.triangle(right,@width:10px,@color:rgb(255, 0, 0)){
+    border-width: @width;
+    border-color:transparent transparent transparent @color;
+    border-style: dashed dashed dashed solid;
+}
+.triangle(bottom,@width:10px,@color:rgb(255, 0, 0)){
+    border-width: @width;
+    border-color: @color transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+.triangle(left,@width:10px,@color:rgb(255, 0, 0)){
+    border-width: @width;
+    border-color: transparent @color transparent transparent;
+    border-style: dashed solid dashed dashed;
+}
+//不论匹配到哪个模式，始终会调用
+.triangle(@_,@width:10px,@color:rgb(255, 255, 255)){
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.sanjiao{
+    .triangle(top);
+}
+.average(@x, @y) {
+    @average: ((@x + @y) / 2);
+  }
+  
+  div {
+    .average(16px, 50px); // 调用混合
+    padding: @average;    // 利用混合模型的返回值
+  }
+
+  .list{
+    width:600px;
+    margin:30px auto;
+    padding:0px;
+    list-style:none;
+    li{
+        height:30px;
+        line-height:30px;
+        background-color:#B5B4B4;
+        margin-bottom:5px;
+    }
+    a{
+        float:left;
+        //&代表上一层选择器
+        &:hover{   //其实就是a:hover
+            color:red;
+        }
+    }
+    span{
+        float:right;
+    }
+}
+
+

@@ -1,0 +1,54 @@
+<!--
+    使用以下操作数组，可以检测变动
+    push()   pop()  shift() splice() sort()  reverse()       页面都会刷新
+
+    新数组替换旧数组
+    filter()  concat()  slice()   map()        页面不会刷新
+
+
+    ******特殊替换原数组     set    splice
+    111---0
+    222---1
+    333---2              vm.datalist.splice(0,1,"xunuo")            
+                         Vue.set(vm.datalist,0,"xunuo")        Vue.set(example.items,indexOfitem,newValue)
+
+    xunuo---0
+    222---1
+    333---2
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(item,index) in datalist" :key="item">
+                <!-- in  vue 可以换成 of
+                    (item,index) of datalist
+                -->
+                {{item}}---{{index}}
+            </li>
+        </ul>
+    </div>
+</body>
+
+
+<script>
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            datalist: [11111, 22222, 33333],
+        }
+    })
+</script>
+
+</html>

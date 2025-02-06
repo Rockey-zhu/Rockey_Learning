@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../磨砂网页/img/bg3.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: serif;
+}
+
+.blur {
+    background: url(../磨砂网页/img/bg3.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    filter: blur(13px);
+    position: absolute;
+    height: 300px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+}
+
+.windeg {
+    border-top: 2px solid rgba(255, 255, 255, .5);
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.text {
+    height: 200px;
+    width: 340px;
+}
+
+.text h1 {
+    text-align: center;
+    text-shadow: 1px 1px rgba(0, 0, 0, .1);
+    color: #fff;
+    margin-top: 57px;
+    font-weight: 700;
+    font-size: 38px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插值表达式</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+
+        <h2>{{msg.length}}</h2>
+        <h2>{{msg+"arr"}}</h2>
+
+        <!--分割 反转 拼接-->
+        <h3>{{msg.split('').reverse().join(',')}}</h3>
+
+        <!--三目运算符-->
+        <h3>{{flag?"true":"false"}}</h3>
+
+        <!--支持数组索引取值-->
+        <h2>{{arr[2]}}</h2>
+
+        <!--支持对象的属性-->
+        <h2>{{obj.name}}</h2>
+
+        <!--数值类型的内置方法-->
+        <h3>{{num.toFixed(2)}}</h3>
+
+        <!--undefined和null在插值表达式中不会显示-->
+        <h1>{{null}}</h1>
+
+        <!--插值表达式不支持语句，只支持表达式-->
+        <!-- {{var a=1}} -->
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: '你好 vue',
+                num: 1,
+                flag: true,
+                arr: ['html', 'css', 'js'],
+                obj: {
+                    name: '许诺',
+                    sex: "男"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

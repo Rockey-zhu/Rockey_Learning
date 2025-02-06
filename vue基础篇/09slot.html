@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!--  slot插槽，可以进行扩展-->
+            <v-header>
+                <p slot="title">这是标题</p>
+            </v-header>
+            <v-header>
+                <p slot="title">这是xxxdd
+
+                    <span>xxx</span>
+                </p>
+                <p slot="xxx">这是aaaa</p>
+            </v-header>
+        </div>
+
+        <template id="header">
+            <div>
+                <h5>这是头部</h5>
+                <!-- slot相当于是一个插槽，可以进行扩展  丢了一个占位符使用的时候自己定义-->
+                <!-- 保持slot的name值和占位符中的slot值一致即可 -->
+                <slot name="title"></slot>
+                <slot name="xxx"></slot>
+            </div>
+        </template>
+        <script src="js/vue.js"></script>
+        <script>
+            var header={
+                template:'#header'
+            }
+
+            new Vue({
+                el:'#app',
+                data:{
+
+                },
+                components:{
+                    'v-header':header
+                }
+            })
+        </script>
+    </body>
+</html>

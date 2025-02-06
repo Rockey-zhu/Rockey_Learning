@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="change()">按钮</button>
+            <!-- component动态组件  最终渲染的占位符是动态的 msg的值是什么 占位符就是什么  -->
+            <component :is="msg"></component>
+        </div>
+
+        <template id="header">
+            <h1>这是头部</h1>
+        </template>
+        <template id="footer">
+            <h1>这是底部</h1>
+        </template>
+        <script src="js/vue.js"></script>
+        <script >
+
+            var header={
+                template:'#header'
+            }
+            var footer={
+                template:'#footer'
+            }
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:'v-header'
+                },
+                methods:{
+                    change(){
+                        if(this.msg=='v-header'){
+                            this.msg='v-footer'
+                        }else{
+                            this.msg='v-header'
+                        }
+                    }
+                },
+                components:{
+                    'v-header':header,
+                    'v-footer':footer
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">zhp</div>
+        </div>
+        <div class="main">
+            <div id="pics">
+                <img src="../../pictures/a%20(1).jpg"> //%20就是空格
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var pics = document.getElementById("pics");
+    var n = 1;
+    setInterval(function() {
+        if (n > 3) n = 1
+        pics.innerHTML = "<img src='../../pictures/a%20(" + n + ").jpg'>"
+        n++;
+    }, 2000);
+</script>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .logo {
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        background-color: rgb(65, 180, 225);
+        text-align: center;
+    }
+    
+    #pics img {
+        width: 100%;
+    }
+</style>

@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Rockey.zhu"
+    },
+    {
+      "id": 2,
+      "title": "茶颜悦色",
+      "author": "许诺"
+    },
+    {
+      "title": "今天天气不错，风和日丽",
+      "author": "李四",
+      "id": 3
+    },
+    {
+      "title": "今天天气不错，风和日丽",
+      "author": "张三",
+      "id": 4
+    },
+    {
+      "title": "今天天气不错，风和日丽",
+      "author": "张三",
+      "id": 5
+    },
+    {
+      "title": "今天天气不错，风和日丽",
+      "author": "张三",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

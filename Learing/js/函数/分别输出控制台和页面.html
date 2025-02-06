@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function fn(n) {
+        var total = 1;
+        while (n >= 1) {
+            total = total * n;
+            n--
+        }
+        //把计算结果作为函数的返回值
+        return total
+    }
+
+    //调用这个函数，求12的阶乘，把结果赋值给r1
+    var r1 = fn(12)
+        //调用这个函数，求10的阶乘，把结果赋值给r2
+    var r2 = fn(10)
+
+    document.write(r1);
+    console.log(r2)
+</script>
+
+<body>
+
+</body>
+
+</html>

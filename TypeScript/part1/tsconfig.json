@@ -1,0 +1,58 @@
+{
+    //配置选项
+    //include 用来指定哪些ts文件需要被编译
+        // 路径：** 表示任意目录
+        //         *表示任意文件
+    //"exclude" 不需要被编译的文件目录
+    //默认值：['node_moudle','bowder_commponts']
+
+    // "include": ["./src/**/*"],
+    // "exclude":["./src/hello/**/*"],
+    "include":["./src/**/*"],
+    //compilerOptions 编译器的选项
+    "compilerOptions": {
+        //target 用来指定ts被编译为的js版本
+        "target": "es2015",
+        //module 指定要使用的模块化的规范
+        "module": "system",  //模块化
+        //lib用来指定项目中要使用的库
+        "lib":["es6","dom"],
+
+        //outDir 用来指定编译后文件所在的目录
+        "outDir": "./dist",
+
+        //outFile 将代码合并成一个文件
+        "outFile": "./dist/app.js",    //设置outFile后,所有的全局作用域中的代码会合并到同一个文件中
+        
+        //是否对js文件进行编译,默认是false
+        "allowJs":true,
+        //是否检查js代码是否符合语法规范，默认的是false
+        "checkJs":true,
+
+        //是否移出注释
+        "removeComments":true,
+
+        //不生成编译后的文件 默认是false
+        "noEmit":false,
+
+        //当有错误时不生成编译后的文件
+        "noEmitOnError":true,
+
+        //所有严格检查的总开关
+        "strict":true,
+
+        //用来设置编译后的文件是否使用严格模式,默认是false
+        "alwaysStrict":false,
+
+        //不允许隐式any类型
+        "noImplicitAny":false,
+
+        //不允许不明确类型的this
+        "noImplicitThis":true,
+
+        //严格的检查空值
+        "strictNullChecks":true,
+
+ 
+    }
+}

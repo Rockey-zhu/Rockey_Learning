@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let a = 1;
+        // let b = 2;
+        // let c = 3;
+        // let [a, b, c] = [1, 2, 3]
+
+        // let [foo, [
+        //     [bar], baz
+        // ]] = [1, [
+        //     [2], 3
+        // ]];
+        // console.log(foo, bar, baz) //1,2,3
+
+        // let [x, y, ...z] = ['a'];
+        // console.log(x, y, z)
+        // x  "a"
+        // y  undefined
+        // z  []
+
+        // let [head, ...tail] = [1, 2, 3, 4]
+        // console.log(head, tail)
+        //head  1
+        //tail  [2,3,4]
+
+
+        //不完全解构   只匹配一部分
+        // let [x, y] = [1, 2, 3]
+        // console.log(x, y)
+        //x 1  y 2
+
+        // let [x, y, z] = new Set(['a', 'b', 'c']);
+        // console.log(x, y, z)
+
+        // let [x = 1] = [undefined]
+
+        // let [x = 1] = [null]
+        // console.log(x)
+
+        //2.对象的解构赋值
+        // let {
+        //     bar,
+        //     foo
+        // } = {
+        //     foo: 'aaa',
+        //     bar: 'bbb'
+        // };
+        // foo // "aaa"
+        // bar // "bbb"
+
+        // let {
+        //     baz
+        // } = {
+        //     foo: 'aaa',
+        //     bar: 'bbb'
+        // };
+        // baz // undefined
+        // console.log(foo, bar, baz)
+
+        // let {
+        //     foo: baz
+        // } = {
+        //     foo: 'aaa',
+        //     bar: 'bbb'
+        // };
+        // console.log(baz)
+
+        // let obj = {
+        //     p: ['hello', {
+        //         y: 'world'
+        //     }]
+        // };
+        // let {
+        //     p: [x, {
+        //         y
+        //     }]
+        // } = obj;
+        // console.log(x, y)
+        // x "hello"  y "world"
+
+        //嵌套赋值
+        let obj = {};
+        let arr = [];
+        ({
+            foo: obj.prop,
+            bar: arr[0]
+        } = {
+            foo: 123,
+            bar: true
+        });
+        console.log(obj, arr)
+            //obj {prop:123}
+            //[true]
+
+
+        //字符串的解构赋值
+        const [a, b, c, d, e] = "hello";
+        a
+        b
+        c
+        d
+        e
+        console.log(a, b, c, d, e)
+    </script>
+</body>
+
+</html>

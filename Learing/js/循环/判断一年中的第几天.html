@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //准备三个变量 ， 分别表示 年 月
+    var year = 2000;
+    var month = 8;
+    var date = 8;
+
+    //准备一个变量接收统计结果
+    var total = 0;
+
+    switch (month) {
+        case 12:
+            total += 30; //累加11月天数
+        case 11:
+            total += 31; //累加10月天数
+        case 10:
+            total += 30 //累加9月天数
+        case 9:
+            total += 31 //累计8月天数
+        case 8:
+            total += 31 //累加7月天数
+        case 7:
+            total += 30 //累加6月天数
+        case 6:
+            total += 31 //累加5月天数
+        case 5:
+            total += 30 //累加4月天数
+        case 4:
+            total += 31 //累加3月天数
+        case 3:
+            //total += 28 //累加2月天数     (判断是否为闰年)
+
+            if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                total += 29
+            } else {
+                total += 28
+            }
+        case 2:
+            total += 31 //累加1月天数
+    }
+
+    //直接叠加当月天数
+    total += date
+
+    //此时 total 就是当年中的第几天了
+    console.log("是一年的" + total + "天")
+</script>
+
+<body>
+
+</body>
+
+</html>

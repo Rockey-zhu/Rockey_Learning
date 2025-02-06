@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var max = 24;
+    var min = 12
+
+    //从相对小的数字向 1进行循环
+    for (var i = min; i >= 1; i--) {
+        //判断能被max和min整除
+        if (max % i === 0 && min % i === 0) {
+            //输出这个数字
+            console.log(i)
+            break;
+            //第一次出来的值就已经可以直接结束循环了
+        }
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

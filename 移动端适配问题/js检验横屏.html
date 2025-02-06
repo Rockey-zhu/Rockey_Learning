@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js检验是否横屏</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>这是标题</h1>
+    </div>
+    <div class="content">
+        <div class="pic"></div>
+        <div class="text">素年如锦，红尘摆渡，茶靡了几季光阴。人生的一花一叶一草一木，四季轮回无不渗透着岁月的积累。月有盈缺，潮有涨落。人生，有相聚就会有离别。有欢乐就会有痛苦。有高潮就会有低谷，有花开就会有花落，回眸间，无论我们怎样眷恋那些曾经的温暖也要学会随遇而安。</div>
+    </div>
+</body>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .title h1 {
+        text-align: center;
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .pic {
+        width: 90%;
+        height: 200px;
+        background: red;
+        background-image: url(./tu.png);
+        background-size: 100%;
+    }
+</style>
+<script>
+    //window.orientation:获取屏幕旋转方向
+
+    window.addEventListener("resize", () => {
+        if (window.orientation === 180 || window.orientation === 0) {
+            //正常方向或屏幕旋转180度
+            console.log("竖屏")
+        };
+        if (window.orientation === 90 || window.orientation === -90) {
+            //屏幕顺时针旋转90度或者逆时针旋转90度
+            console.log("横屏")
+        }
+    })
+</script>
+
+</html>

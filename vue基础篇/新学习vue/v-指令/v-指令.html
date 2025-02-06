@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-指令</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="app">
+
+        <!--
+            v-pre  不编译指令  不会将{{}}语法转化
+            v-once  只编译一次  之后重新渲染,将被忽略并跳过，有助于优化性能
+            v-model 双向数据绑定 结合表单元素使用
+
+            vue 在解析之前，div中的好h2标签上有一个v-cloak属性
+            vue 解析之后 h2标签上没有一个v-cloak属性
+        -->
+        <!-- <h2 v-cloak>{{msg}}</h2> -->
+
+        <!--mustache语法只会在指定的地方编译，可以在标签内调加内容-->
+        <!--使用v-text指令-->
+        <!-- <h3 style="color:red" v-text="msg+ ''+'hellos'"></h3>
+
+        <h3>{{vHtml}}</h3>
+        <h4 v-text="vHtml"></h4>
+        <h5 v-html="vHtml"></h5> -->
+
+        <!-- <h2>没有使用v-once:{{msg}}</h2>
+        <h3 v-once>使用v-once:{{msg}}</h3> -->
+
+        <input type="text" name="itext" id="itext" v-model="msg" />
+    </div>
+    <script>
+        // setTimeout(() => {
+        var vm = new Vue({
+                el: "#app",
+                data() {
+                    return {
+                        // msg: 'v-text指令',
+                        // vHtml: '<li>这是一个li标签</li>',
+                        // str: '这是一个文本内容'
+                        msg: '你好呀! v-cloak'
+                    }
+                },
+            })
+            //}, 1000);
+    </script>
+</body>
+
+</html>

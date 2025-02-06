@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="overflow: auto">
+    <!-- sales模块 -->
+    <div id="sales" class="sales">
+        <div class="header">
+            <div class="headerName">SGC Sales Operation Dashboards</div>
+            <div class="pageChange">
+                <div class="pl">
+                    <div>
+                        <img src="../../img/header/FinanceDefault.png" />
+                    </div>
+                    <div class="activeText">Finance</div>
+                </div>
+                <div class="sales">
+                    <div>
+                        <img src="../../img/header/head-sales-handle.png" />
+                    </div>
+                    <div>Sales</div>
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="color1"></div>
+            <div class="color2"></div>
+            <div class="color3"></div>
+        </div>
+
+        <!--内容标题部分-->
+
+
+
+        <!-- 内容 -->
+        <div class="sales_tbody">
+            <div class="sales_left">
+                <div class="sales_title">
+                    <div class="left_title">销售消化分析</div>
+                    <div class="right_title">
+                        <img src="../../img/gengxinshijain_icon.png"> Monthly更新于:2021.7
+                    </div>
+                </div>
+                <div class="sales_border">
+                    <div class="sales_think">
+                        <div class="think_top">
+                            <div class="xiaohua">
+                                <div class="xiaohua_one">
+                                    <div class="market">
+                                        <img src="../../img/Sales_xiaoshou_icon.png">
+                                    </div>
+                                    <div class="market_word">
+                                        <div class="market_word_one">销售</div>
+                                        <div class="market_word_two">
+                                            <div class="market_two_left">
+                                                金额
+                                            </div>
+                                            <div class="markrt_two_right">
+                                                同比<img src="../../img/Sales_xiaoshou_up.png">
+                                            </div>
+                                        </div>
+                                        <div class="market_word_three">
+                                            <div class="market_three_left" id="XiaoShouEr"></div>
+                                            <div class="market_three_right">16.98%</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="xiaohua_two">
+                                    <div class="SalesReached">
+                                        <img src="../../img/Sales_dacheng_icon.png">
+                                    </div>
+                                    <div class="SalesReached_word">
+                                        <div class="SalesReached_word_one">销售达成</div>
+                                        <div class="SalesReached_word_two">
+                                            <div class="SalesReached_two_left">
+                                                YTD达成：35.245M
+                                            </div>
+                                            <div class="SalesReached_two_right">
+                                                全年达成：35.245M
+                                            </div>
+                                        </div>
+                                        <div class="SalesReached_word_three">
+                                            <div class="SalesReached_three_left">65.55%</div>
+                                            <div class="SalesReached_three_right">50.98%</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="xiaohua_three">
+                                    <div class="DealerDigestion">
+                                        <img src="../../img/Sales_jingxiaoshangxiaohua_icon.png">
+                                    </div>
+                                    <div class="DealerDigestion_word">
+                                        <div class="DealerDigestion_word_one">经销商消化</div>
+                                        <div class="DealerDigestion_word_two">
+                                            <div class="DealerDigestion_two_left">
+                                                消化量
+                                            </div>
+                                            <div class="DealerDigestion_two_right">
+                                                消化比例
+                                            </div>
+                                        </div>
+                                        <div class="DealerDigestion_word_three">
+                                            <div class="DealerDigestion_three_left">55.375M</div>
+                                            <div class="DealerDigestion_three_right">64.98%</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sales_num">
+                                <div class="num_head">
+                                    <div class="Dealeramount">
+                                        <img src="../../img/Sales_xiaoshoujine.png"> 经销商金额
+                                    </div>
+                                    <div class="amount_icon">
+                                        <div class="icon_one">
+                                            <div class="icon_text1">销售金额</div>
+                                        </div>
+                                        <div class="icon_two">
+                                            <div class="icon_text2">累计消化</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="DealerAmount_img">
+                                    <img>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xian"></div>
+                        <div class="sales_content">
+                            <div class="box_pic1">
+                                <div class="content_title">
+                                    <div class="title_left">
+                                        <div class="icon"></div>
+                                        <div class="text">商品渠道流通</div>
+                                    </div>
+                                    <div class="title_right">
+                                        <div class="majorProducts">
+                                            <img src="../../img/sales/zhongdian_weixuan.png">重点产品
+                                        </div>
+                                        <div class="moreProducts">
+                                            <img src="">更多产品
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_pic2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边内容-->
+            <div class="sales_saomiao">
+                <div class="sales_right">
+                    <div class="saomiao_title">
+                        <div class="left_title">销售扫描分析</div>
+                        <div class="daily">
+                            <img src="../../img/gengxinshijain_icon.png"> Daily更新于：2021.7.20
+                        </div>
+                    </div>
+                    <div class="saomiao_tbody">
+
+                        <div class="sales_num">
+                            <div class="num_head">
+                                <div class="Dealeramount">
+                                    <img src="../../img/jingxiaoshangsaomiao_icon.png"> 经销商扫描量
+                                </div>
+                                <div class="amount_icon">
+                                    <div class="icon_one">
+                                        <div class="icon_text1">销售</div>
+                                    </div>
+                                    <div class="icon_two">
+                                        <div class="icon_text2">经销商扫描量</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="DealerScanning_img">
+                                <img>
+                            </div>
+                        </div>
+
+                        <div class="sales_num">
+                            <div class="num_head">
+                                <div class="Dealeramount">
+                                    <img src="../../img/lingshoudiansaomiao_icon.png"> 零售商扫描量
+                                </div>
+                                <div class="amount_icon">
+                                    <div class="icon_one">
+                                        <div class="icon_text1">销售</div>
+                                    </div>
+                                    <div class="icon_two">
+                                        <div class="icon_text2">零售商扫描量</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="RetailerScan_img">
+                                <img>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .sales {
+        position: absolute;
+        width: 100%;
+    }
+    
+    .sales .header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .sales .header .headerName {
+        width: 860px;
+        height: 45px;
+        font-size: 38px;
+        font-weight: 600;
+        color: #524E4E;
+        line-height: 40px;
+        margin: 15px 15px;
+    }
+    
+    .sales .header .pageChange {
+        width: 420px;
+        padding-top: 10px;
+        display: flex;
+        text-align: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+    
+    .sales .header .pageChange .imgContent {
+        padding-bottom: 3px;
+    }
+    
+    .sales .header .pageChange .home {
+        width: 120px;
+        height: 15px;
+        font-size: 13px;
+        font-weight: 400;
+        color: #979797;
+        line-height: 15px;
+    }
+    
+    .sales .header .pageChange .home img {
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    .sales .header .pageChange .cashFlow {
+        width: 120px;
+        height: 15px;
+        font-size: 13px;
+        font-weight: 400;
+        color: #979797;
+        line-height: 15px;
+    }
+    
+    .sales .header .pageChange .cashFlow img {
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    .sales .header .pageChange .pl {
+        width: 290px;
+        height: 15px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #979797;
+        line-height: 20px;
+    }
+    /* .sales .header .pageChange .pl .activeText {
+height: 15px;
+font-size: 11px;
+font-weight: 400;
+color: #284354;
+line-height: 15px;
+} */
+    
+    .sales .header .pageChange .pl img {
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    .sales .header .pageChange .sales {
+        width: 100px;
+        height: 15px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #284354;
+        line-height: 20px;
+    }
+    
+    .sales .header .pageChange .sales img {
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    .sales .line {
+        display: flex;
+    }
+    
+    .sales .line .color1 {
+        width: 34%;
+        height: 2px;
+        background-color: #559500;
+    }
+    
+    .sales .line .color2 {
+        width: 33%;
+        height: 2px;
+        background-color: #FB951E;
+    }
+    
+    .sales .line .color3 {
+        width: 33%;
+        height: 2px;
+        background-color: #69BB91;
+    }
+    
+    .sales_title {
+        width: 1292px;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .left_title {
+        width: 120px;
+        height: 28px;
+        font-size: 20px;
+        font-weight: 400;
+        color: #284354;
+        line-height: 65px;
+        margin-left: 20px;
+    }
+    
+    .right_title {
+        width: 230px;
+        height: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #6B6567;
+        line-height: 60px;
+        margin-right: 24px;
+    }
+    
+    .sales_tbody {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .sales_tbody .sales_think {
+        width: 1258px;
+        height: 790px;
+    }
+    
+    .sales_left {
+        width: 1238px;
+        height: 860px;
+        background: #FFFFFF;
+    }
+    
+    .sales_border {
+        width: 1238px;
+        height: 770px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.09);
+        border-radius: 8px;
+    }
+    
+    .sales_think .think_top {
+        width: 1228px;
+        height: 412px;
+        /* background-color:blue; */
+        margin-left: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .xiaohua {
+        width: 516px;
+        height: 384px;
+        margin-top: 15px;
+    }
+    
+    .xiaohua .xiaohua_one {
+        width: 516px;
+        height: 115px;
+        background-image: url(../../img/Sales_xiaoshou_bg.png);
+        margin-bottom: 15px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .xiaohua .xiaohua_one .market {
+        width: 120px;
+        height: 115px;
+    }
+    
+    .xiaohua .xiaohua_one .market img {
+        padding: 27px 32px;
+    }
+    
+    .xiaohua .xiaohua_two .SalesReached img {
+        padding: 27px 32px;
+    }
+    
+    .xiaohua_two {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .xiaohua_two .SalesReached_word .SalesReached_word_one {
+        width: 300px;
+        height: 33px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 45px;
+    }
+    
+    .xiaohua_two .SalesReached_word .SalesReached_word_two {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 48px;
+    }
+    
+    .xiaohua_two .SalesReached_word .SalesReached_word_two .SalesReached_two_left {
+        width: 180px;
+    }
+    
+    .xiaohua_two .SalesReached_word .SalesReached_word_three {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        height: 30px;
+        font-size: 26px;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 55px;
+    }
+    
+    .xiaohua_two .SalesReached_word .SalesReached_word_three .SalesReached_three_left {
+        width: 180px;
+    }
+    
+    .xiaohua .xiaohua_three .DealerDigestion img {
+        padding: 27px 32px;
+    }
+    
+    .xiaohua .xiaohua_one .market_word .market_word_one {
+        width: 52px;
+        height: 33px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 45px;
+    }
+    
+    .xiaohua .xiaohua_two {
+        width: 516px;
+        height: 115px;
+        background-image: url(../../img/Sales_xiaoshoudacheng_bg.png);
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+    
+    .xiaohua .xiaohua_two .SalesReached {
+        width: 120px;
+        height: 115px;
+    }
+    
+    .xiaohua .xiaohua_one .market_word .market_word_two {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 48px;
+    }
+    
+    .xiaohua .xiaohua_one .market_word .market_word_two .market_two_left {
+        width: 200px;
+    }
+    
+    .xiaohua .xiaohua_three {
+        width: 516px;
+        height: 115px;
+        background-image: url(../../img/Sales_xiaoshouxiaohua_bg.png);
+        border-radius: 10px;
+    }
+    
+    .xiaohua_three {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .xiaohua_three .DealerDigestion_word .DealerDigestion_word_one {
+        width: 300px;
+        height: 33px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 45px;
+    }
+    
+    .xiaohua_three .DealerDigestion_word .DealerDigestion_word_two {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 48px;
+    }
+    
+    .xiaohua_three .DealerDigestion_word .DealerDigestion_word_two .DealerDigestion_two_left {
+        width: 180px;
+    }
+    
+    .xiaohua_three .DealerDigestion_word .DealerDigestion_word_three {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        height: 30px;
+        font-size: 26px;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 55px;
+    }
+    
+    .xiaohua_three .DealerDigestion_word .DealerDigestion_word_three .DealerDigestion_three_left {
+        margin-right: 55px;
+    }
+    
+    .xiaohua .xiaohua_three .DealerDigestion {
+        width: 120px;
+        height: 115px;
+    }
+    
+    .xiaohua .xiaohua_one .market_word .market_word_three {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        height: 30px;
+        font-size: 26px;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 55px;
+    }
+    
+    .xiaohua .xiaohua_one .market_word .market_word_three .market_three_left {
+        margin-right: 55px;
+        width: 40px;
+        height: 30px;
+    }
+    
+    .sales_num {
+        margin-top: 15px;
+        width: 588px;
+        height: 360px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px 0px rgba(236, 240, 245, 1);
+        border-radius: 12px;
+        margin-left: 12px;
+    }
+    
+    .sales_num .num_head {
+        width: 588px;
+        height: 60px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+        border-radius: 12px 12px 0px 0px;
+        border: 1px solid #ECF0F5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .sales_num .num_head .Dealeramount {
+        font-size: 20px;
+        color: #284354;
+        line-height: 50px;
+        margin-left: 45px;
+    }
+    
+    .sales_num .num_head .amount_icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 350px;
+        height: 60px;
+    }
+    
+    .sales_num .num_head .amount_icon .icon_one {
+        width: 12px;
+        height: 12px;
+        background: #5E9A01;
+        border-radius: 50px;
+        margin-top: 20px;
+    }
+    
+    .sales_num .num_head .amount_icon .icon_one .icon_text1 {
+        width: 90px;
+        height: 22px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #8C8C8C;
+        line-height: 12px;
+        padding-left: 20px;
+    }
+    
+    .sales_num .num_head .amount_icon .icon_two {
+        width: 12px;
+        height: 12px;
+        background: #FB951E;
+        border-radius: 50px;
+        margin-top: 20px;
+        margin-right: 55px;
+    }
+    
+    .sales_num .num_head .amount_icon .icon_two .icon_text2 {
+        width: 122px;
+        height: 22px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #8C8C8C;
+        line-height: 12px;
+        padding-left: 25px;
+    }
+    
+    .DealerAmount_img {
+        width: 460px;
+        height: 280px;
+        background-color: red;
+        margin: 8px 60px;
+    }
+    
+    .DealerScanning_img {
+        width: 460px;
+        height: 280px;
+        background-color: red;
+        margin: 8px 60px;
+    }
+    
+    .RetailerScan_img {
+        width: 460px;
+        height: 280px;
+        background-color: red;
+        margin: 8px 60px;
+    }
+    
+    .xian {
+        width: 1192px;
+        height: 1px;
+        border: 1px solid #ECF0F5;
+        margin-left: 30px;
+    }
+    
+    .sales_tbody .sales_saomiao {
+        width: 662px;
+        height: 790px;
+        background: white;
+    }
+    
+    .sales_tbody .sales_right {
+        width: 660px;
+        height: 842px;
+        background: #F8F8F8;
+        border-radius: 0px 0px 8px 8px;
+    }
+    
+    .sales_saomiao .sales_right .saomiao_title {
+        width: 615px;
+        height: 70px;
+        margin-left: 22px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .saomiao_title .daily {
+        width: 230px;
+        height: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #6B6567;
+        line-height: 60px;
+        margin-right: -30px;
+    }
+    
+    .sales_saomiao .sales_right .saomiao_tbody {
+        width: 615px;
+        height: 765px;
+        margin-left: 22px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        border: 1px solid #F8F9FC;
+    }
+    
+    .sales_content {
+        width: 1170px;
+        height: 320px;
+        margin: 10px 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .sales_content .box_pic1 {
+        width: 550px;
+        height: 320px;
+        background-color: #69BB91
+    }
+    
+    .sales_content .box_pic1 .content_title {
+        width: 550px;
+        height: 70px;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .sales_content .box_pic1 .content_title .title_left {
+        width: 250px;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        padding: 14px 16px;
+    }
+    
+    .sales_content .box_pic1 .content_title .title_left .icon {
+        width: 5px;
+        height: 26px;
+        background: #68A010;
+    }
+    
+    .sales_content .box_pic1 .content_title .title_left .text {
+        width: 150px;
+        height: 28px;
+        font-size: 20px;
+        font-weight: 400;
+        color: #534F4F;
+        line-height: 28px;
+        padding-left: 10px;
+    }
+    
+    .sales_content .box_pic1 .content_title .title_right {
+        display: flex;
+        flex-direction: row;
+        width: 340px;
+        height: 100px;
+        padding: 10px 17px;
+    }
+    
+    .sales_content .box_pic1 .content_title .title_right .majorProducts {
+        width: 140px;
+        height: 40px;
+        background: #F8F8F8;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.13);
+        border-radius: 7px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #524E4E;
+        line-height: 28px;
+    }
+    
+    .sales_content .box_pic1 .content_title .title_right .moreProducts {
+        width: 140px;
+        height: 40px;
+        background: linear-gradient(270deg, #3E8F29 0%, #68A010 100%);
+        box-shadow: 0px 0px 7px 0px rgba(73, 120, 9, 0.23);
+        border-radius: 7px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #524E4E;
+        line-height: 28px;
+    }
+    
+    .sales_content .box_pic2 {
+        width: 550px;
+        height: 320px;
+        background-color: #69BB91
+    }
+</style>

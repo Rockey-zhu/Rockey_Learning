@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <!-- <script>
+        Vue.config.productionTip = false
+    </script> -->
+</head>
+
+<body>
+    <h3>监听器</h3>
+    <div id="app">
+        {{msg}}
+        <button @click="updateHello">修改数据</button>
+    </div>
+
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: "hello"
+        },
+        methods: {
+            updateHello() {
+                this.msg = "world"
+            }
+        },
+        watch: {
+            // newValue:"改变之后的数据"，
+            // oldvalue:"改变之前的数据"
+            //函数名必须与监听的数据对象保持一致
+            msg(newValue, oldvalue) {
+                //数据发生变化，自动执行的函数
+                console.log(newValue)
+                console.log(oldvalue)
+            }
+        }
+    })
+</script>
+
+</html>

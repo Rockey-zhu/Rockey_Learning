@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "vue-router": "^4.1.2"
+  },
+  "name": "pic",
+  "version": "1.0.0",
+  "main": "封装简单函数及输出.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.krclouds.com/Rockey.zhu/rockey_learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

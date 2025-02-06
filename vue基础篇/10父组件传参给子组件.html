@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 正常情况下，父组件和子组件没有办法进行传参(通信) -->
+        <!-- 
+            app父组件 v-header子组件
+            父组件传递参数给子组件
+            1、在占位符中  :cmsg="fmsg" cmsg子组件中需要接收的数据(自定义) fmsg父组件中的数据
+            2、在子组件中定义props属性  接收传递的参数 props:['cmsg']
+            3、在子组件中可以直接使用cmsg 
+
+            传参以后：
+            1、如果父组件的值修改，传递过来的子组件的数据是否有变化  有变化
+            2、传递过来的子组件的数据是否可以直接修改？可以修改，但是会有警告  可以通过watch属性进行转移
+            3、修改传递过来的子组件的数据，父组件的数据是否更新?不会更新 如果想要更新，传递对象，对象是以地址的形式传递
+         -->
+
+         <!-- var a=10;
+         var b=a;
+         a=100
+
+         var a={
+             msg:10
+         }
+         b=a;
+         a.msg=100; -->
+
+        <div id="app">
+            <button @click="change()">按钮</button>
+            {{msg.n}}
+            <v-header :cmsg="msg"></v-header>
+        </div>
+        <template id="header">
+            <h1 @click="change()">这是头部{{t.n}}</h1>
+        </template>
+
+        <script src="js/vue.js"></script>
+        <script>
+            var header={
+                template:'#header',
+                data(){
+                   return{
+                    num:'这是子组件的数据',
+                    t:this.cmsg
+                   }
+                },
+                methods:{
+                    change(){
+                        this.t.n+=4;
+                    }
+                },
+                props:['cmsg'],
+                watch:{
+                    // 相当于把传递过来的值，赋值给一个变量 watch可以监听传递过来值的变化
+                    cmsg(){
+                        this.t=this.cmsg
+                    }
+                }
+            }
+            new Vue({
+                el:'#app',
+                data:{
+                    msg:{
+                        n:'这是父组件的数据'
+                    }
+                },
+               methods:{
+                   change(){
+                       this.msg.n+=2;
+                   }
+               },
+                components:{
+                    'v-header':header
+                }
+            })
+        </script>
+    </body>
+</html>

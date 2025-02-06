@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="change()">数据</button>
+            {{num}}
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    num:0
+                },
+                methods:{
+                    change(){
+                        this.num++;
+                    }
+                },
+                // watch属性可以监听数据的变化
+                watch:{
+                    // 变量名(){
+                    //     变量发生变化的时候，执行代码
+                    // }
+                    num(){
+                        console.log('num发生变化了');
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

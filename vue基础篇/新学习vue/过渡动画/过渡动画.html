@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="isShow=!isShow">change</button>
+
+        <transition enter-active-class="xunuo-enter-active" leave-active-class="xunuo-leave-active">
+            <div v-show="isShow">1111111111</div>
+        </transition>
+
+        <transition name="xunuo" appear>
+            <div v-show="isShow">22222222222222</div>
+        </transition>
+    </div>
+
+    <style>
+        /*进场动画*/
+        
+        .xunuo-enter-active {
+            animation: aaa 1.5s;
+        }
+        /*出场动画*/
+        
+        .xunuo-leave-active {
+            animation: aaa 1.5s reverse;
+        }
+        
+        @keyframes aaa {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+
+    <script>
+        new Vue({
+            el: "#box",
+            data: {
+                isShow: true
+            }
+        })
+    </script>
+</body>
+
+</html>

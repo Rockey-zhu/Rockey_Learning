@@ -1,0 +1,111 @@
+<!--
+    组件间传递数据
+        1.父组件向子组件传数据(自动传)
+            1.在子组件标签里通过v-bind绑定一条属性，属性的值为父组件的数据名称
+            2.在子组件里利用props属性把已经绑定的属性名写进去
+            3.在子组件的template里就可以使用数据了
+
+
+        2.子组件向父组件传数据（主动传，事件触发）
+        使用自定义事件
+    自定义事件
+        1.在发数据组件的methods里定义一个方法，方法内容如下
+                this.$emit('event',value)
+                 event  自定义事件名称
+                 value  要传递的数据（可选参数）
+        
+        2.在发数据组件的标签里
+            <component @自定义事件名称="函数名"></component>
+        3.在接收数据组件的methods里
+            函数名(val){
+                val就是接收到的数据
+            }
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <father></father>
+    </div>
+
+    <!--父组件模板-->
+    <template id="fatherTemplate">
+        <div>
+            <h1>{{name}}</h1>
+            <p>{{sonData}}</p>
+
+            <son :fatherdata="name" @getdata="getval"></son>
+            <!-- 
+            <son v-bind:fatherdata="name"></son>
+            -->
+        </div>
+    </template>
+
+    <!--子组件模板-->
+    <template id="sonTemplate"> 
+        <div>
+            <p>父亲把:"{{fatherdata}}"传给了儿子</p>
+
+            <div>
+                <button @click="send">把数据发送给父亲</button>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        new Vue({
+            el: '#app',
+            components: {
+                father: {
+                    template: "#fatherTemplate",
+                    data() {
+                        return {
+                            name: '老王',
+                            sonData: ''
+                        }
+                    },
+                    methods: {
+                        getval(data) {
+                            this.sonData = data;
+                        }
+                    },
+                    components: {
+                        son: {
+                            template: "#sonTemplate",
+                            props: ['fatherdata'],
+                            data() {
+                                return {
+                                    message: '你好，我是小王!'
+                                }
+                            },
+                            methods: {
+                                send() { //这里先定一个事件的方法，用于发数据
+                                    //alert(1)
+
+                                    //this.$emit('event', value) //触发自定义事件
+
+                                    this.$emit('getdata', this.message)
+                                }
+                            },
+                        },
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

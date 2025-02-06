@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中间人</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleAjax">click-ajax</button>
+
+        <film-item v-for="item in datalist" :key="item.filmId" :mydata="item" @event="handleEvent"></film-item>
+
+        <!-- {{filmData}} -->
+        <film-detail :film-data="filmData"></film-detail>
+    </div>
+
+    <script>
+        Vue.component("filmItem", {
+            props: ["mydata"],
+            template: `
+                    <div class="item">
+                        <img :src="mydata.poster"/>
+                        <div class="box">
+                            {{mydata.name}}
+                        
+                            <div>
+                                <button @click="handleClick">详情</button>    
+                            </div>
+                        </div>
+                    </div>
+                    `,
+            methods: {
+                handleClick() {
+                    // console.log(this.mydata.synopsis)
+                    this.$emit("event", this.mydata.synopsis)
+                }
+            },
+        })
+
+        Vue.component("filmDetail", {
+            props: ["filmData"],
+            template: `
+                <div class="filminfo">{{filmData}}</div>
+            `
+        })
+        new Vue({
+            el: "#box",
+            data: {
+                datalist: [],
+                filmData: ""
+            },
+            methods: {
+                handleAjax() {
+                    axios.get("./json/maizuo.json").then(res => {
+                        console.log(res.data.data.films)
+                        this.datalist = res.data.data.films
+                    })
+                },
+
+                // handleImg(url) {
+                //     // return 'https://p0.meituan.net/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg@1l_1e_1c_30w_60h'
+                //     return url.replace('w.h/', '') + '@1l_1e_1c_120w_180h'
+                // }
+
+                //自定义事件处理器
+                handleEvent(data) {
+                    console.log("父组件定义", data)
+                    this.filmData = data
+                }
+            },
+        })
+
+        //"http://p0.meituan.net/w.h/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg"
+        //http://p0.pipi.cn/mmdb/25bfd6d72c992367cb537c020675f703a7045.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180
+        //https://p0.meituan.net/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg@1l_1e_1c_128w_180h
+    </script>
+
+</body>
+<style>
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    
+    .item {
+        display: flex;
+    }
+    
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    li {
+        display: flex;
+        border: 1px solid skyblue;
+        border-radius: 10px;
+        background-color: pink;
+        margin: 20px 0px;
+    }
+    
+    .explain {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    
+    .filminfo {
+        width: 300px;
+        height: 315px;
+        background: yellow;
+        position: fixed;
+        right: 50px;
+        top: 100px;
+        border: 1px solid blue;
+    }
+</style>
+
+</html>

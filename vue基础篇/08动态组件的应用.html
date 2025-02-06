@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .current{
+                background-color: lime;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li @click="msg='login'"  :class="{current:msg=='login'}">登陆</li>
+                <li @click="msg='sign'" :class="{current:msg=='sign'}">注册</li>
+            </ul>
+            <component :is="msg"></component>
+        </div>
+        <template id="login">
+            <h1>这是登陆</h1>
+        </template>
+        <template id="sign">
+            <h1>这是注册</h1>
+        </template>
+
+        <script src="js/vue.js"></script>
+        <script>
+            var login={
+                template:'#login'
+            }
+            var sign={
+                template:'#sign'
+            }
+            new Vue({
+                el:'#app',
+                data:{
+                    msg:'login'
+                },
+                components:{
+                    login,
+                    sign
+                }
+            })
+        </script>
+    </body>
+</html>

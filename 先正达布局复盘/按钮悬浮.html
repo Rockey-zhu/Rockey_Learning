@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="chatbox" id="flod">
+            <div class="img" onclick="handClickReturn()" id="imgReturn"></div>
+            <div class="choice active" onclick="moveOne()" style="display: none;" id="one">销售额</div>
+            <div class="choice" onclick="moveTwo()" style="display: none;" id="two">销售量</div>
+        </div>
+        <div class="boxone" id="sheetOne">
+            <div class="chart-title">
+                1111111
+            </div>
+            <div class="chart">
+                pic1
+            </div>
+        </div>
+        <div class="boxtwo" id="sheetTwo" style="visibility: hidden;">
+            <div class="chart-title">
+                22222
+            </div>
+            <div class="chart">
+                pic2
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .chatbox {
+        width: 20px;
+        height: 20px;
+        background: yellow;
+        position: absolute;
+        z-index: 111;
+        right: 10px;
+        top: 20px;
+        cursor: pointer;
+    }
+    
+    .box {
+        width: 500px;
+        height: 600px;
+        position: relative;
+    }
+    
+    .boxone {
+        width: 500px;
+        height: 600px;
+        background: wheat;
+        position: absolute;
+    }
+    
+    .boxtwo {
+        width: 500px;
+        height: 600px;
+        background: rgb(28, 255, 217);
+        position: absolute;
+    }
+    
+    .chart-title {
+        width: 100%;
+        height: 60px;
+        background: violet;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .chart {
+        width: 100%;
+        height: 100%;
+        background: chartreuse;
+    }
+    
+    .img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .choice {
+        width: 100px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background: coral;
+        cursor: pointer;
+    }
+    
+    .active {
+        font-weight: 800;
+        font-size: 20px;
+        border-bottom: 2px solid #F4A41F;
+        color: #F4AC33;
+    }
+</style>
+<script>
+    //判断悬浮筛选器按钮是否被点击
+    let isShow = true;
+
+    function handClickReturn() {
+        if (isShow) { //显示
+            console.log("show")
+            document.getElementById("one").style.display = "";
+            document.getElementById("two").style.display = "";
+
+
+
+        } else { //隐藏
+            console.log("none")
+            document.getElementById("one").style.display = "none";
+            document.getElementById("two").style.display = "none";
+        }
+        isShow = !isShow;
+
+    }
+
+    function moveOne() {
+        document.getElementById("one").classList.add("active");
+        document.getElementById("two").classList.remove("active");
+        document.getElementById("sheetOne").style.visibility = "visible"
+        document.getElementById("sheetTwo").style.visibility = "hidden"
+
+    }
+
+    function moveTwo() {
+        document.getElementById("one").classList.remove("active");
+        document.getElementById("two").classList.add("active");
+        document.getElementById("sheetOne").style.visibility = "hidden"
+        document.getElementById("sheetTwo").style.visibility = "visible"
+
+    }
+</script>
+
+</html>

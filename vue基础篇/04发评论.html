@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- vue控制数据 -->
+    <div id="app">
+        <textarea name="" id="" cols="30" rows="10" v-model="msg"></textarea>
+        <button v-on:click="change()">按钮</button>
+        <ul>
+            <li v-for="(item,index) in list" v-on:click="del(index)">
+                <h4>{{item.con}}</h4>
+                <p>{{item.date}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+                list: [{
+                    con: '明天放假',
+                    date: "2021-12-02"
+                }, {
+                    con: '明天放假',
+                    date: "2021-12-03"
+                }]
+            },
+            methods: {
+                del(a) {
+                    this.list.splice(a, 1)
+                },
+                change() {
+                    this.list.push({
+                        con: this.msg,
+                        date: '2021-2-3'
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

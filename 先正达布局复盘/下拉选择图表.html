@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+</head>
+
+<body style="padding:0;margin:0;background: #eceaea;">
+    <div class="content">
+        <div class="header">
+            <div class="title">用户播放次数统计</div>
+            <div class="options">
+                <select name="跳转" class="select" id="type">
+                    <option value="1">
+                        浏览次数</option>
+                    <option
+                        value="2">
+                        完播率</option>
+                        <option
+                        value="3">
+                        点赞次数</option>
+                        <option
+                        value="4">
+                        评论次数</option>
+                        <option
+                        value="5">
+                        转发次数</option>
+                </select>
+            </div>
+        </div>
+        <div class="sheetTu" style="position:relative">
+            <div id="shouhou1" class="sheet">1</div>
+            <div id="shouhou2" class="sheet">2</div>
+            <div id="shouhou3" class="sheet">3</div>
+            <div id="shouhou4" class="sheet">4</div>
+            <div id="shouhou5" class="sheet">5</div>
+
+        </div>
+    </div>
+
+</body>
+<style>
+    .options {
+        width: 40%;
+        height: 40px;
+        /*border-radius: 5px;*/
+        /*盒子阴影修饰作用,自己随意*/
+        /* box-shadow: 0 0 5px #ccc;*/
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+    
+    .options select {
+        /*清除select的边框样式*/
+        border: none;
+        background: none;
+        /*清除select聚焦时候的边框颜色*/
+        outline: none;
+        /*将select的宽高等于div的宽高*/
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        /*隐藏select的下拉图标*/
+        /* appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none; */
+        /*通过padding-left的值让文字居中*/
+        padding-left: 20px;
+    }
+    /*使用伪类给select添加自己想用的图标*/
+    
+    .options:after {
+        content: "";
+        width: 14px;
+        height: 8px;
+        background: url(../assets/arrow-down.png) no-repeat center;
+        /*通过定位将图标放在合适的位置*/
+        position: absolute;
+        right: 10px;
+        top: 41%;
+        /*给自定义的图标实现点击下来功能*/
+        pointer-events: none;
+    }
+    
+    .content {
+        width: 96%;
+        height: 500px;
+        background: #fff;
+        border-radius: 10px;
+        margin: 20px 10px;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 20px;
+    }
+    
+    .title {
+        font-size: 20px;
+        color: black;
+        font-weight: 5000;
+    }
+    
+    .sheetTu {
+        width: 96%;
+        height: 80%;
+        background: red;
+        margin: 20px 8px;
+    }
+    
+    .sheet {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: wheat;
+    }
+</style>
+<script>
+    $(function() {
+        //隐藏div
+        $("#shouhou2").hide();
+        $("#shouhou3").hide();
+        $("#shouhou4").hide();
+        $("#shouhou5").hide();
+        //给div添加change事件
+        $("#type").change(function() {
+            if ($(this).val() == 1) {
+                $("#shouhou1").show();
+                $("#shouhou2").hide();
+                $("#shouhou3").hide();
+                $("#shouhou4").hide();
+                $("#shouhou5").hide();
+            } else if ($(this).val() == 2) {
+                $("#shouhou2").show();
+                $("#shouhou1").hide();
+                $("#shouhou3").hide();
+                $("#shouhou4").hide();
+                $("#shouhou5").hide();
+            } else if ($(this).val() == 3) {
+                $("#shouhou3").show();
+                $("#shouhou1").hide();
+                $("#shouhou2").hide();
+                $("#shouhou4").hide();
+                $("#shouhou5").hide();
+            } else if ($(this).val() == 4) {
+                $("#shouhou4").show();
+                $("#shouhou1").hide();
+                $("#shouhou2").hide();
+                $("#shouhou3").hide();
+                $("#shouhou5").hide();
+            } else if ($(this).val() == 5) {
+                $("#shouhou5").show();
+                $("#shouhou1").hide();
+                $("#shouhou2").hide();
+                $("#shouhou3").hide();
+                $("#shouhou4").hide();
+            }
+        })
+    })
+</script>
+
+</html>

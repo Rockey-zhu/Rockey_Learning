@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="radio" id="btn-one" name="radio1" checked onclick="handleTochange1(true)">
+        <label for="radio" class="cs-radio"></label>
+        <label for="radio">作物年</label>
+
+        <input type="radio" id="btn-two" name="radio1" onclick="handleTochange1(false)">
+        <label for="radio" class="cs-radio"></label>
+        <label for="radio">日历年</label>
+    </div>
+    <div>
+        <input type="radio" id="btn-three" name="radio2" checked onclick="handleTochange2(true)">
+        <label for="radio" class="cs-radio"></label>
+        <label for="radio">销售额</label>
+
+        <input type="radio" id="btn-four" name="radio2" onclick="handleTochange2(false)">
+        <label for="radio" class="cs-radio"></label>
+        <label for="radio">销售量</label>
+    </div>
+    <!-- <div onclick="handleTochange1(true)">筛选1-1</div>
+
+    <div onclick="handleTochange1(false)">筛选1-2</div>
+
+    <div onclick="handleTochange2(true)">筛选2-1</div>
+
+    <div onclick="handleTochange2(false)">筛选2-2</div> -->
+
+    <div style="width:100% ;height:400px;background:rebeccapurple;position: relative;">
+        <div class="contentfirst" id="content1" style="width:100% ; height:300px;align-items: center;background-color: yellow;position: absolute;margin-top: 50px;"></div>
+        <div class="contentfirst" id="content2" style="width:100% ; height:300px;align-items: center;background-color: pink;position: absolute;margin-top: 50px;visibility: hidden;"></div>
+        <div class="contentfirst" id="content3" style="width:100% ; height:300px;align-items: center;background-color: green;position: absolute;margin-top: 50px;visibility: hidden;"></div>
+        <div class="contentfirst" id="content4" style="width:100% ; height:300px;align-items: center;background-color: blue;position: absolute;margin-top: 50px;visibility: hidden;"></div>
+    </div>
+    <!--js-->
+    <script>
+        let fn1Model = true;
+        let fn2Model = true;
+
+        function switchShow(fn1, fn2) {
+            if (fn1 == true && fn2 == true) {
+                document.getElementById("content1").style.visibility = "visible";
+                document.getElementById("content2").style.visibility = "hidden";
+
+                document.getElementById("content3").style.visibility = "hidden";
+                document.getElementById("content4").style.visibility = "hidden";
+                // 切换显示
+            } else if (fn1 == true && fn2 == false) {
+                document.getElementById("content1").style.visibility = "hidden";
+                document.getElementById("content2").style.visibility = "visible";
+
+                document.getElementById("content3").style.visibility = "hidden";
+                document.getElementById("content4").style.visibility = "hidden";
+                // 切换显示
+            } else if (fn1 == false && fn2 == true) {
+                // 切换显示
+                document.getElementById("content1").style.visibility = "hidden";
+                document.getElementById("content2").style.visibility = "hidden";
+
+                document.getElementById("content3").style.visibility = "visible";
+                document.getElementById("content4").style.visibility = "hidden";
+            } else if (fn1 == false && fn2 == false) {
+                // 切换显示
+                document.getElementById("content1").style.visibility = "hidden";
+                document.getElementById("content2").style.visibility = "hidden";
+
+                document.getElementById("content3").style.visibility = "hidden";
+                document.getElementById("content4").style.visibility = "visible";
+            }
+        }
+
+        function handleTochange1(fn) {
+            fn1Model = fn;
+            switchShow(fn1Model, fn2Model)
+        }
+
+
+        function handleTochange2(fn) {
+            fn2Model = fn;
+            switchShow(fn1Model, fn2Model)
+        }
+    </script>
+</body>
+
+</html>

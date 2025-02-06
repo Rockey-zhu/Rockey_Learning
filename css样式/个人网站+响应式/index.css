@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(./images/email-pattern.png);
+    font-family: '微软雅黑';
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('./iconfont/iconfont.eot');
+    src: url('./iconfont/iconfont.eot?#iefix') format('embedded-opentype'), url('./iconfont/iconfont.woff2') format('woff2'), url('./iconfont/iconfont.woff') format('woff'), url('./iconfont/iconfont.ttf') format('truetype'), url('./iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    /* font-size: 35px; */
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.header .logo h1 {
+    float: left;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.header .nav {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+}
+
+.header .nav ul {
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+}
+
+.header .nav ul li {
+    float: right;
+    line-height: 70px;
+}
+
+.header .nav ul li {
+    margin-right: 30px;
+}
+
+.header .nav ul li:nth-child(1) {
+    margin-right: 100px;
+}
+
+.header .nav li a:hover {
+    color: #1041e2;
+}
+
+main {
+    margin-top: 100px;
+    width: 100%;
+}
+
+main h1,
+p {
+    text-align: center;
+}
+
+main ul {
+    width: 300px;
+    margin: auto;
+}
+
+main ul li {
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+main ul li a span {
+    font-size: 30px;
+}
+
+main ul li a span:hover {
+    color: #1041e2;
+}
+
+main ul li:nth-child(1) {
+    margin-left: 70px;
+}
+
+main p {
+    margin-top: 80px;
+}
+
+main p a {
+    margin-left: 50px;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #1041e2;
+    border-radius: 10px;
+    transition: background .5s;
+}
+
+main p a:nth-child(1) {
+    margin-left: 0;
+}
+
+main p a:hover {
+    background-color: #5475e0;
+}
+
+nav {
+    display: none;
+}

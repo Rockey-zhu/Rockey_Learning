@@ -1,0 +1,113 @@
+/* 销售收入、销售毛利率趋势 */
+
+.legendOne {
+    width: 34.375rem;
+    display: flex;
+    align-items: center;
+}
+
+.legendOne .name {
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.9375rem;
+}
+
+.legendOne .color1 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #459D51;
+    margin-left: 0.5rem;
+}
+
+.legendOne .color2 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #FDC826;
+    margin-left: 0.5rem;
+}
+
+.legendOne .color3 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #FDC826;
+    margin-left: 0.5rem;
+}
+
+.legendOne .color4 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #26fd38;
+    margin-left: 0.5rem;
+}
+
+
+/* 销售毛利率趋势 */
+
+.legendTwo {
+    width: 34.375rem;
+    display: flex;
+    align-items: center;
+}
+
+.legendTwo .name {
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.9375rem;
+}
+
+.legendTwo .color1 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #FDC826;
+    margin-left: 0.5rem;
+}
+
+.legendTwo .color2 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #FDC826;
+    margin-left: 0.5rem;
+}
+
+.legendTwo .color3 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #26fd38;
+    margin-left: 0.5rem;
+}
+
+
+/*YTD趋势  切换*/
+
+.legendThree {
+    width: 34.375rem;
+    display: flex;
+    align-items: center;
+}
+
+.legendThree .name {
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.9375rem;
+}
+
+.legendThree .color1 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #26fd38;
+    margin-left: 0.5rem;
+}
+
+.legendThree .color2 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #FDC826;
+    margin-left: 0.5rem;
+}
+
+.legendThree .color3 {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: #26fd38;
+    margin-left: 0.5rem;
+}

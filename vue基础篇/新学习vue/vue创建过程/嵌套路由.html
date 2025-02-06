@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 300px;
+            display: flex;
+        }
+        
+        ul li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+        }
+        
+        ul li a {
+            text-decoration: none;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            background: grey;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li>
+                <router-link to="/home">home</router-link>
+            </li>
+            <li>
+                <router-link to="/news">news</router-link>
+            </li>
+            <li>
+                <router-link to="/hot">hot</router-link>
+            </li>
+        </ul>
+        <div class="box">
+            <router-view></router-view>
+        </div>
+    </div>
+    <template id="hot">
+			<div>
+				<h2>热点</h2>	
+				<ul>
+					<li>娱乐明星</li>
+					<li>
+						<router-link to="/hot/film">电影</router-link> <!-- 二级路由对应的链接 -->
+						<router-view></router-view>	<!-- 二级路由显示的地方 -->
+					</li>
+					<li>音乐</li>
+				</ul>
+			</div>
+		</template>
+
+    <!-- 定义二级路由对应的模板 -->
+    <template id="film">
+			<div>
+				<span>熊出没</span> <span>喜洋洋</span>
+			</div>
+		</template>
+
+    <script>
+        const Home = {
+            template: '<h2>首页</h2>'
+        };
+        const News = Vue.extend({
+            template: '<h2>新闻</h2>'
+        });
+        const Hot = {
+            template: '#hot'
+        };
+
+        const Film = {
+            template: '#film'
+        }
+
+        const routes = [{
+            path: '/home',
+            component: Home
+        }, {
+            path: '/news',
+            component: News
+        }, {
+            path: '/hot',
+            component: Hot,
+            children: [ //二级路由使用children参数添加
+                {
+                    path: 'film', //这里的path不需要加斜杠
+                    component: Film
+                },
+            ]
+        }, ];
+
+        const router = new VueRouter({
+            routes
+        });
+
+        new Vue({
+            el: '#app',
+            data: {},
+            router,
+        });
+        router.push('/home');
+    </script>
+</body>
+
+</html>

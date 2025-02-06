@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    #active {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        height: 120px;
+        border-color: #f39800;
+        border-radius: 10px;
+        line-height: 120px;
+    }
+    
+    .boxList {
+        display: flex;
+        border-radius: 10px;
+    }
+    
+    .active {
+        /* display: flex; */
+        list-style: none;
+        padding: 30px;
+        margin: 30px;
+        border: 2px solid #ffb22c;
+        border-radius: 10px;
+    }
+    
+    .menuName {
+        display: flex;
+    }
+    
+    p {
+        color: #f39800;
+        font-weight: 600;
+    }
+    
+    img {
+        width: 300px;
+        height: 300px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <ul class="boxList">
+            <box-list>
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcp1.douguo.com%2Fupload%2Fcaiku%2F5%2F2%2F9%2Fyuan_52fb128e2bc1a03de4808c7164b6f7a9.jpg&refer=http%3A%2F%2Fcp1.douguo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659602093&t=a390114a3c7c5b172025d379f76cf182"
+                    alt="" slot="imgsrc">
+
+                <span slot="title">可乐鸡翅</span>
+
+                <strong slot="price">36/份</strong>
+            </box-list>
+
+            <box-list>
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcp1.douguo.com%2Fupload%2Fcaiku%2F3%2F4%2Fe%2Fyuan_3450e19ad7e8b22ca8374ccb39f8447e.jpeg&refer=http%3A%2F%2Fcp1.douguo.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659602831&t=42a49a6cb0245ad6db62f80d068e5fa1"
+                    alt="" slot="imgsrc">
+
+                <span slot="title">红烧排骨</span>
+
+                <strong slot="price">48/份</strong>
+            </box-list>
+        </ul>
+    </div>
+    <template id="boxListTemplate">
+        <li class="active">
+            <slot name="imgsrc"></slot>
+            <div class="menuName">
+                <div class="left">
+                    <slot name="title"></slot>
+                    <p>
+                        RMB<slot name="price"></slot>
+                    </p>
+                </div>
+                <div class="right">
+                    <a href="#"></a>
+                </div>
+            </div>
+        </li>
+    </template>
+
+    <script>
+        new Vue({
+            el: '#app',
+            components: {
+                boxList: {
+                    template: '#boxListTemplate',
+                }
+            }
+        })
+    </script>
+</body>
+
+
+</html>

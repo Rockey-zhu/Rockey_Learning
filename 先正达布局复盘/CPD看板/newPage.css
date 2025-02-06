@@ -1,0 +1,299 @@
+    /* .img_logo {
+        width: 8%;
+        position: absolute;
+        left: 20px;
+    } */
+    
+    .Unit-title {
+        flex: 10% 0 0;
+        justify-content: end;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .unitbtn1,
+    .unitbtn2 {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        height: 30px;
+    }
+    
+    .content {
+        width: 100%;
+        height: 270px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .box-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /*卡片*/
+    
+    .card-one {
+        width: 23.5%;
+        height: 160px;
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .line-title {
+        display: flex;
+        align-items: center;
+    }
+    
+    .line-title .sign {
+        width: 5px;
+        height: 30px;
+        /* border-radius: 0 12px 12px 0;
+        border: 0 solid rgba(151, 151, 151, 1);
+        background: rgba(109, 163, 0, 1); */
+    }
+    
+    .sian-title {
+        color: rgba(79, 79, 82, 1);
+        font-size: 18px;
+        font-weight: 600;
+        font-family: "PingFang SC";
+        text-align: left;
+        padding-left: 10px;
+    }
+    
+    .line-kpi {
+        display: flex;
+        height: 35%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .kpi_large {
+        font-size: 24px;
+        font-weight: 550;
+        padding-left: 25px;
+        color: rgba(71, 76, 92, 1);
+    }
+    
+    .kpi_large-special {
+        padding-left: 5px;
+        font-size: 21px;
+        font-weight: 550;
+        color: rgba(71, 76, 92, 1);
+    }
+    
+    .large-box {
+        display: flex;
+        /* font-size: 24px;
+        font-weight: 550;
+        padding-left: 0px;
+        color: rgba(71, 76, 92, 1); */
+    }
+    
+    .kpiSpecialUnit {
+        font-size: 16px;
+        font-weight: 400;
+        color: #474C5C;
+        padding-top: 5px;
+        padding-left: 8px;
+    }
+    
+    .box-kpi {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .box-kpi-special {
+        display: flex;
+        height: 35%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .card-box-kpi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .kpi_small {
+        color: rgba(71, 76, 92, 1);
+        font-size: 17px;
+        font-weight: 600;
+    }
+    /* .specialOne {
+        background: rgba(29, 116, 116, 1) !important;
+    }
+    
+    .specialTwo {
+        background: rgba(250, 149, 32, 1) !important;
+    }
+     */
+    
+    .card-two {
+        width: 23.5%;
+        height: 160px;
+        box-shadow: 0 0 7px 0 rgba(212, 205, 251, 0);
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-three {
+        width: 23.5%;
+        height: 160px;
+        box-shadow: 0 0 7px 0 rgba(212, 205, 251, 0);
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-four {
+        width: 23.5%;
+        height: 160px;
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .dark {
+        width: 6px;
+        height: 86px;
+        border-radius: 5px;
+        border: 0 solid rgba(151, 151, 151, 1);
+        background: rgba(241, 245, 249, 1);
+    }
+    
+    .special-span {
+        font-size: 16px;
+        font-weight: 500;
+        padding-top: 5px;
+    }
+    /*下方图表部分*/
+    
+    .picSheet {
+        display: flex;
+        height: 290px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 10px;
+        border-radius: 10px;
+    }
+    
+    .sheetBox {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        /* height: 500px; */
+        /* border-radius: 10px;
+        border: 0 solid rgba(151, 151, 151, 1);
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 7px 0 rgba(212, 205, 251, 0.4); */
+    }
+    
+    .sheetBox_special {
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        /* height: 500px; */
+        /* border-radius: 10px;
+        border: 0 solid rgba(151, 151, 151, 1);
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 7px 0 rgba(212, 205, 251, 0.4); */
+    }
+    
+    .sheetBox_special .title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        padding-left: 20px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: 700;
+        color: rgba(68, 68, 68, 1);
+        /* border-bottom: 1px solid rgba(233, 229, 255, 1); */
+    }
+    
+    .sheetBox .title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        padding-left: 20px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: 700;
+        color: rgba(68, 68, 68, 1);
+        /* border-bottom: 1px solid rgba(233, 229, 255, 1); */
+    }
+    
+    .pic-special {
+        height: 100%;
+        padding: 0px 10px;
+    }
+    
+    .pic {
+        height: 100%;
+        padding: 0px 15px;
+    }
+    
+    .sheet {
+        /* background: red; */
+        height: calc(100% - 15px);
+        margin-top: 5px;
+    }
+    
+    .changeBtn {
+        display: flex;
+        justify-content: end;
+        /* flex: 85% 0 0; */
+        padding-right: 15px;
+    }
+    
+    .btn {
+        margin: 0px 8px;
+        padding: 4px 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border: 0 solid rgba(151, 151, 151, 1); */
+        box-shadow: 0 0 3px 0 rgba(190, 179, 254, 0.73);
+        color: #444444;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: pointer;
+        background: rgba(236, 240, 245, 1);
+    }
+    
+    .active {
+        color: #FFFFFF;
+        background: rgba(94, 154, 1, 1);
+        font-size: 16px;
+        font-weight: 550;
+    }
+    
+    .filter {
+        display: flex;
+        height: 50px;
+        flex: 1 0 0;
+    }
+    
+    .items {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .select {
+        width: 60%;
+        height: 30px;
+        background: red;
+        margin-left: 15px;
+    }

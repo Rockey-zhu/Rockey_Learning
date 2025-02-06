@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //分析   1.>=相对大的那个数字
+    //       2.<=两数的成绩
+    //       3.能同时整除两个数字
+
+    //准备两个变量 保存两个数字
+    var max = 15
+    var min = 10
+    for (var i = max; i <= min * max; i += max) {
+        //只要能被整除 相对小的数字 就可以
+        if (i % min === 0) {
+            console.log(i)
+            break
+        }
+
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

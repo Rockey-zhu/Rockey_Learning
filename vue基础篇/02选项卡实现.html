@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .current {
+            background-color: lime;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in list" v-on:click="change(index)" v-bind:class="{current:index==num}">{{item}}</li>
+        </ul>
+        <section>
+            <div v-for="(item,index) in list" v-show="num==index">{{item}}内容</div>
+        </section>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 0,
+                list: ['新闻', '娱乐', '电影', '电视剧']
+            },
+            methods: {
+                change(a) {
+                    this.num = a;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

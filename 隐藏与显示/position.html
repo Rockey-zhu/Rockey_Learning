@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="countant1">
+        最外层
+        <div class="countant2">
+            第二层
+            <div class="box1">1111111111111</div>
+            <div class="box2">2222222222222</div>
+            <div class="box3">333333333333</div>
+        </div>
+    </div>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .countant1 {
+        height: 800px;
+        width: 100%;
+        background-color: pink;
+    }
+    
+    .countant2 {
+        height: 600px;
+        width: 100%;
+        background-color: yellow;
+        position: absolute;
+    }
+    
+    .box1 {
+        height: 100px;
+        width: 100%;
+        background-color: green;
+        position: absolute;
+        top: 20px;
+        left: 100px;
+    }
+    
+    .box2 {
+        height: 100px;
+        width: 100%;
+        background-color: red;
+        /* position: relative;
+        left: 50px;
+        top: 50px; */
+    }
+    
+    .box3 {
+        height: 100px;
+        width: 100%;
+        background-color: blue;
+    }
+</style>
+
+</html>

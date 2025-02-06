@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="btn">
+        <span class="num-items">1</span>
+    </div>
+    <div class="btn">
+        <span class="num-items">2</span>
+    </div>
+    <div class="btn">
+        <span class="num-items">3</span>
+    </div>
+    <div class="btn">
+        <span class="num-items">4</span>
+    </div>
+    <div class="btn">
+        <span class="num-items">5</span>
+    </div>
+</body>
+<style>
+    .bg_red {
+        background-color: red;
+    }
+</style>
+<script>
+    var currentEl = [];
+    $('.btn').click(function() {
+        $(this).toggleClass('bg_red');
+
+        console.log('before add', currentEl)
+
+        // if (currentEl.length >= 3) {
+        //     alert("You can pick only 3 item");
+        //     return;
+        // }
+
+        currentEl.push($(this).find('span').text());
+
+        console.log('after add', currentEl)
+
+
+    })
+</script>
+
+</html>

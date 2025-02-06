@@ -1,0 +1,95 @@
+.nav ul {
+    display: none;
+}
+
+#toggler:checked+label .box {
+    background-color: pink;
+}
+
+#toggler {
+    display: none;
+}
+
+.hamburger-container {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.hamburger-container span {
+    display: block;
+    height: 2px;
+    background-color: #000;
+    position: relative;
+    transition: transform .3s ease-in-out, top .3s ease-in-out .3s;
+    top: 0;
+}
+
+.hamburger-container span:nth-child(2) {
+    margin-top: 7px;
+}
+
+#toggler:checked+label .hamburger-container span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 4px;
+    transition: top .3s ease-in-out, transform .3s ease-in-out .3s;
+}
+
+#toggler:checked+label .hamburger-container span:nth-child(2) {
+    transform: rotate(-45deg);
+    top: -4px;
+    transition: top .3s ease-in-out, transform .3s ease-in-out .3s;
+}
+
+#toggler:checked~.nav-items {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    display: block;
+}
+
+.nav-items {
+    background-color: rgb(9, 52, 98);
+    width: 780px;
+    height: 200px;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    transform: scaleY(0);
+    transition: transform .3s ease-in-out, opacity ease-in-out .3s;
+    transform-origin: 50% 0;
+    opacity: 0;
+}
+
+.nav-items ul li {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.nav-items ul li:nth-child(1) {
+    margin-top: 20px;
+}
+
+.nav-items ul li a {
+    color: #fff;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+.logo h1 a {
+    font-size: 20px;
+}
+
+main {
+    margin-top: 250px;
+}

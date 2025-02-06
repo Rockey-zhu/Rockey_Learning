@@ -1,0 +1,55 @@
+<!--
+    插槽 slot 用于分发内容
+        语法
+        template里定义:<slot></slot>
+        组件标签对里使用(标签对里的标签能被解析)
+            插槽只能写一个，写多个会报错
+
+    具名插槽  给slot添加name属性后就叫具名插槽
+        语法
+        template里定义:<slot name="自定义名"></slot>
+        组件标签对里使用: <p slot="自定义名"></p>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <test>
+            <h2 slot="h2content">显示出来了!</h2>
+            <h3 slot="h3content">为啥显示不出来</h3>
+        </test>
+    </div>
+
+    <template id="testTemplate"> 
+        <div>
+            <h1>许诺</h1>
+            <slot name="h2content"></slot>
+            <slot name="h3content"></slot>
+        </div>
+    </template>
+
+    <script>
+        new Vue({
+            el: '#app',
+            components: {
+                test: {
+                    template: '#testTemplate'
+                }
+            }
+        })
+    </script>
+</body>
+
+
+</html>

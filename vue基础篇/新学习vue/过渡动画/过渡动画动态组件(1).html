@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡组件动画</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        footer ul {
+            display: flex;
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 40px;
+        }
+        
+        footer ul li {
+            flex: 1;
+            text-align: center;
+            list-style: none;
+            height: 40px;
+            line-height: 40px;
+            background: gray;
+            color: white;
+        }
+        /*进场动画*/
+        
+        .xunuo-enter-active {
+            animation: aaa 1.5s;
+        }
+        /*出场动画*/
+        
+        .xunuo-leave-active {
+            animation: aaa 1.5s reverse;
+        }
+        
+        @keyframes aaa {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+        <keep-alive>
+            <transition name="xunuo" mode="out-in">
+                <component :is="which"></component>
+            </transition>
+        </keep-alive>
+
+        <footer>
+            <ul>
+                <li @click=" which='home' ">
+                    首页
+                </li>
+                <li @click=" which='list' ">
+                    列表
+                </li>
+                <li @click=" which='shopcar' ">
+                    购物车
+                </li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        Vue.component("home", {
+            template: `
+                <div>
+                    home
+                    <input type="search"/>
+                </div>
+            `
+        })
+
+        Vue.component("list", {
+            template: `
+                <div>
+                    list    
+                </div>
+            
+            `
+        })
+
+        Vue.component("shopcar", {
+            template: `
+                <div>
+                    shopcar    
+                </div>        
+            `
+        })
+
+
+        new Vue({
+            el: "#box",
+            data: {
+                which: 'home'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡组件动画</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<style>
+    /*进场动画*/
+    
+    .xunuo-enter-active {
+        animation: aaa 1.5s;
+    }
+    /*出场动画*/
+    
+    .xunuo-leave-active {
+        animation: aaa 1.5s reverse;
+    }
+    
+    @keyframes aaa {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+</style>
+
+<body>
+    <div id="box">
+        <!-- 双向绑定的指令 -->
+        <!-- {{mytext}} -->
+        <input type="text" v-model="mytext" />
+        <button @click="handleAdd()">add</button>
+
+        <div v-show="!datalist.length">待办事项空空如也</div>
+        <ul v-show="datalist.length">
+            <transition-group name="xunuo">
+                <li v-for="(item,index) in datalist" :key="item">
+                    {{item}}--{{index}}
+                    <button @click="handleDel(index)">del</button>
+                </li>
+            </transition-group>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                mytext: "11111",
+                datalist: ["111", "222", "333"]
+            },
+            methods: {
+                handleAdd() {
+                    console.log("add", this.mytext)
+                    this.datalist.push(this.mytext)
+
+                    this.mytext = "" //清空value
+                },
+                handleDel(index) {
+                    console.log("del", index)
+                    this.datalist.splice(index, 1)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

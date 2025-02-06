@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- <v-header></v-header> -->
+            <con></con>
+        </div>
+        <template id="con">
+            <main>
+                这是con
+                <left></left>
+            </main>
+        </template>
+
+        <template id="left">
+            <main>
+                这是左边
+            </main>
+        </template>
+
+        <script src="js/vue.js"></script>
+        <script>
+            var left={
+                template:'#left'
+            }
+            var con={
+                template:'#con',
+                components:{
+                    // 如果k和v的值 一样 可以直接简写
+                    left
+                }
+            }
+            
+            new Vue({
+                el:'#app',
+                components:{
+                    con
+                }
+            })
+        </script>
+    </body>
+</html>

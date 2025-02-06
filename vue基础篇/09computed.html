@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="change()">改变</button>
+            <!-- 页面刷新的时候，随机数会更新 -->
+            <!-- 数据改变的时候，就会促使页面更新 -->
+            <p>{{num}}</p>
+            <p>{{Math.random()}}</p>
+            {{t+n+Math.random()}}
+            <br>
+            {{fn}}
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    num:0,
+                    n:0,
+                    t:0
+                },
+                methods:{
+                    change(){
+                        this.num++;
+                        // this.t++;
+                    }
+                },
+                //computed计算属性 一般用来执行多个数据的计算。效率比较高，数据存储到缓存里面。如果数据没有变化，直接读取缓存数据
+                computed:{
+                    // 使用的时候，直接调用不用加()否则当做函数处理
+                    fn(){
+                        return this.n+this.t+Math.random()
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

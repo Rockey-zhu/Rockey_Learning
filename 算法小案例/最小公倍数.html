@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最小公倍数</title>
+</head>
+
+<body>
+    <script>
+        //输入两个数判断最小公倍数
+        var a = prompt("请输入第一个数");
+        var b = prompt("请输入第二个数");
+        for (var i = 1; i <= a * b; i++) {
+            if (i % a == 0 && i % b == 0) {
+                alert(i);
+                break;
+            }
+        }
+        document.write(i)
+    </script>
+</body>
+
+</html>

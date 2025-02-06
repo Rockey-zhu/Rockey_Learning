@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.js">
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js">
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map">
+    </script>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<style>
+    .swiper {
+        width: 500px;
+        height: 400px;
+    }
+</style>
+
+<body>
+
+    <div id="box">
+        <swiper :key="datalist.length" :loop="false">
+            <swiper-item v-for="data in datalist" :key="data">
+                <img :src="data" />
+            </swiper-item>
+            <!-- <swiper-item>66666</swiper-item>
+            <swiper-item>77777</swiper-item> -->
+        </swiper>
+    </div>
+    <script>
+        Vue.component("swiperItem", {
+            template: `
+                <div class="swiper-slide">
+                    <slot></slot>    
+                </div>
+            `
+        })
+        Vue.component("swiper", {
+                props: {
+                    loop: {
+                        type: Boolean,
+                        default: true
+                    }
+                },
+                template: `
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <slot></slot>
+                </div>
+                    <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            `,
+                mounted() {
+                    console.log("mounted")
+                    new Swiper('.swiper', {
+                        //direction: 'vertical', // 垂直切换选项
+                        loop: this.loop, // 循环模式选项
+                        // 如果需要分页器
+                        pagination: {
+                            el: '.swiper-pagination',
+                        },
+                        autoplay: { //自动轮播
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        },
+                    })
+                },
+                destroyed() {
+                    console.log("destroy")
+                }
+            })
+            //swiper初始化过早
+        new Vue({
+            el: "#box",
+            data: {
+                datalist: []
+            },
+            mounted() {
+                //ajax
+                setTimeout(() => {
+                        this.datalist = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"]
+
+                    }, 2000)
+                    //初始化过早   
+            },
+        })
+    </script>
+</body>
+
+</html>

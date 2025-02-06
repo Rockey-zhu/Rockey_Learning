@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>穿梭框组件</title>
+    <link href="http://cdn.staticfile.org/layui/2.7.6/css/layui.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="transferTest"></div>
+    <script src="http://cdn.staticfile.org/layui/2.7.6/layui.min.js"></script>
+    <script>
+        layui.use('transfer', function() {
+            var $ = layui.jquery
+            var transfer = layui.transfer;
+
+            var data = [{
+                "value": "1",
+                "title": "瓦罐汤"
+            }, {
+                "value": "2",
+                "title": "油酥饼"
+            }, {
+                "value": "3",
+                "title": "炸酱面"
+            }, {
+                "value": "4",
+                "title": "串串香"
+            }, {
+                "value": "5",
+                "title": "豆腐脑"
+            }, {
+                "value": "6",
+                "title": "驴打滚"
+            }, {
+                "value": "7",
+                "title": "北京烤鸭"
+            }, {
+                "value": "8",
+                "title": "烤冷面"
+            }, {
+                "value": "9",
+                "title": "毛血旺"
+            }, {
+                "value": "10",
+                "title": "肉夹馍"
+            }, {
+                "value": "11",
+                "title": "臊子面"
+            }, {
+                "value": "12",
+                "title": "凉皮"
+            }, {
+                "value": "13",
+                "title": "羊肉泡馍"
+            }, {
+                "value": "14",
+                "title": "冰糖葫芦"
+            }, {
+                "value": "15",
+                "title": "狼牙土豆"
+            }]
+
+            let selectedTransfers = []
+                //渲染
+            transfer.render({
+                elem: '#transferTest' //绑定元素
+                    ,
+                title: ['待选择项', '已选择项（可上下拖动调整顺序）'],
+                data: data,
+                id: 'demo1' //定义索引
+                    ,
+                onchange: function(data, index) {
+                    if (index === 0) {
+                        // 加入
+                        selectedTransfers.push(data)
+                    } else {
+                        // 移除
+                        selectedTransfers.splice(data)
+                    }
+                    $("#transferTest div[data-index='1'] ul li").attr("draggable", "true");
+                    console.log(data); //得到当前被穿梭的数据
+                    console.log(index); //如果数据来自左边，index 为 0，否则为 1
+                }
+            });
+            $("#transferTest div[data-index='1'] ul li").attr("draggable", "true");
+            loadDrag()
+
+            function loadDrag() {
+                let list = document.querySelector("#transferTest div[data-index='1'] ul")
+                let currentLi
+                list.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.effectAllowed = 'move'
+                    currentLi = e.target
+                    setTimeout(() => {
+                        currentLi.classList.add('moving')
+                    })
+                })
+
+                list.addEventListener('dragenter', (e) => {
+                    e.preventDefault()
+                    if (e.target === currentLi || e.target === list) {
+                        return
+                    }
+                    let liArray = Array.from(list.childNodes)
+                    let currentIndex = liArray.indexOf(currentLi)
+                    let targetIndex = liArray.indexOf(e.target)
+                    if (currentIndex < targetIndex) {
+                        if (e.target.nextElementSibling.nodeName === 'LI') {
+                            list.insertBefore(currentLi, e.target.nextElementSibling)
+                        }
+                    } else {
+                        if (e.target.nodeName === 'LI') {
+                            list.insertBefore(currentLi, e.target)
+                        }
+                    }
+                })
+                list.addEventListener('dragover', (e) => {
+                    e.preventDefault()
+                })
+                list.addEventListener('dragend', (e) => {
+                    currentLi.classList.remove('moving')
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>

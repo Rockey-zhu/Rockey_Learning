@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // String.fromCodePoint(0x20BB7)
+        //     // "𠮷"
+        // String.fromCodePoint(0x78, 0x1f680, 0x79) === 'x\uD83D\uDE80y'
+        // String.raw
+
+        // var s = "𠮷";
+
+        // s.length // 2
+        // s.charAt(0) // ''
+        // s.charAt(1) // ''
+        // s.charCodeAt(0) // 55362
+        // s.charCodeAt(1) // 57271
+
+        //includes()：返回布尔值，表示是否找到了参数字符串。
+        // startsWith()： 返回布尔值， 表示参数字符串是否在原字符串的头部。
+        // endsWith()： 返回布尔值， 表示参数字符串是否在原字符串的尾部。
+
+        // let s = 'hello world!';
+        // s.startsWith('hello')
+        // s.endsWith("!")
+        // s.includes("o")
+
+        // 'x'.repeat(3) // "xxx"
+        // 'hello'.repeat(2) // "hellohello"
+        // 'na'.repeat(0) // "
+
+        console.log('abc'.padStart(10, '0123456789'))
+            // =>0123456abc 
+            // 如果用来补全的字符串与原字符串，
+            //两者的长度之和超过了最大长度，则会截去超出位数的补全字符串。
+        console.log('1'.padStart(10, '0'))
+
+
+        const s = ' abc ';
+        s.trim() //消除空格
+        s.trimStart() //只消除头部空格
+        s.trimEnd() //只消除尾部空格
+
+        //实例方法:replaceAll()
+        console.log('aabbcc'.replace('b', '_'))
+            //字符串的实例方法replace()只能替换第一个匹配到的'b'
+
+        console.log('aabbcc'.replace(/b/g, '_'))
+            //想要替换所有的匹配，用正则表达式的g的修饰符
+
+        console.log('aabbcc'.replaceAll('b', '-'))
+            //新增的replaceAll()方法也能成功一次性替换所有匹配
+
+        console.log('aabbcc'.replaceAll('b', () => '_'))
+            //第二个参数是一个函数，该行函数的返回值会替换掉所有b的匹配
+
+        const str = '123abc456';
+        const regex = /(\d+)([a-z]+)(\d+)/g;
+
+        function replacer(match, p1, p2, p3, offset, string) {
+            return [p1, p2, p3].join(' - ');
+        }
+
+        console.log(str.replaceAll(regex, replacer))
+    </script>
+</body>
+
+</html>

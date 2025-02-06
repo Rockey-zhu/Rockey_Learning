@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="change()" v-color:blue>按钮</button>
+            <!-- 使用指令v-指令名字:参数(把参数当做常量进行处理) 
+                v-指令名字="参数"会把参数当做变量解析
+            -->
+            <p v-color:red v-if="show" >文字</p>
+            <button v-color="red">sss</button>
+            
+            {{msg}}
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script src="js/common.js"></script>
+        <script>
+           
+            new Vue({
+                el:'#app',
+                data:{
+                    msg:0,
+                    show:true,
+                    red:'yellow'
+                },
+                methods:{
+                    change(){
+                        this.msg++;
+                        this.show=!this.show;
+                    }
+                }
+            })
+            
+        </script>
+    </body>
+</html>

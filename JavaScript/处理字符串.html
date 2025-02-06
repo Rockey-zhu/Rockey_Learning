@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+        let str = "/reg!uname=123&&upass=456"
+            //pathname 接口地址
+            //data数据 uname:123
+        let arr = str.split("!")
+        console.log(arr)
+        let pathname = arr[0]
+        let arr1 = arr[1].split("&&")
+        let data = {}
+        arr1.forEach(item => {
+            //item数组中的元素
+            let arr2 = item.split("=")
+            data[arr2[0]] = arr2[1]
+        })
+        console.log(data)
+    </Script>
+</body>
+
+</html>

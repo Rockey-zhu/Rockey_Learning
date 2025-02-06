@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        {{msg}}
+        <div id="app">
+            <!-- 在vue中会把{{}}内部的值当做变量处理，不会直接渲染 -->
+
+            <!-- v-pre不会渲染，直接以{{}}的形式显示 -->
+            <p v-pre >{{msg}}</p>
+            <button v-on:click="change()">按钮</button>
+            <!-- v-once只会渲染一次，后面数据变化也不再重新渲染 -->
+            <p v-once>{{msg}}</p>
+            {{msg}}
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    msg:0
+                },
+                methods:{
+                    change(){
+                        this.msg++
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

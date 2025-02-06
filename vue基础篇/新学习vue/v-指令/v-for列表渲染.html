@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(item,index) in datalist" :key="item">
+                <!-- in  vue 可以换成 of
+                    (item,index) in datalist
+                -->
+                {{item}}---{{index}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(item,key) in obj">
+                <!-- in  vue 可以换成 of-->
+                {{key}}---{{item}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(item,index) in 10">
+                <!-- in  vue 可以换成 of-->
+                {{item}}---{{index}}
+            </li>
+        </ul>
+    </div>
+</body>
+
+
+<script>
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            iscreated: false,
+            datalist: [{
+                id: 1,
+                title: "11111",
+                state: 0
+            }, {
+                id: 2,
+                title: "22222",
+                state: 1
+            }, {
+                id: 3,
+                title: "33333",
+                state: 2
+            }],
+            obj: {
+                name: "许诺",
+                hobby: "游泳",
+                age: "22"
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+box盒子模型是由四部分组成的：
+内容（content）、内边框（padding）、边框（border）和外边框（margin）
+
+标准和模型认为：盒子的实际尺寸=内容(设置的宽/高)+内边距+边距
+
+IE盒模型认为：盒子的实际尺寸=设置的宽/高=内容+内边距+边距
+
+
+
+outer display type
+对外显示方面，盒子类型可以分成2类：block-level box(块级盒子)和inline-level box(行内级盒子)。
+
+列出都有哪些块级和行内级盒子：
+
+块级盒子：display 为 block、list-item、table、flex、grid、flow-root 等；
+行内级盒子：display 为 inline、inline-block、inline-table 等；
+
+block
+
+占满一行，默认继承父元素的宽度；多个块元素将从上到下进行排列；
+设置 width/height 将会生效；
+设置 padding 和 margin 将会生效；
+inline
+
+不会占满一行，宽度随着内容而变化；多个 inline 元素将按照从左到右的顺序在一行里排列显示，如果一行显示不下，则自动换行；
+设置 width/height 将不会生效；
+设置竖直方向上的 padding 和 margin 将不会生效；
+inline-block
+
+是行内块元素，不单独占满一行，可以看成是能够在一行里进行左右排列的块元素；
+设置 width/height 将会生效；
+设置 padding 和 margin 将会生效；

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <ul id="brandLiId">
+			<li>笔记本</li>
+			<li>手机</li>
+			<li>鞋子</li>
+			<li>运动</li>
+		</ul>
+</body>
+<style>
+    #active{
+        background-color: cornflowerblue;
+    }
+    li{
+        cursor: pointer;
+}
+</style>
+<script type="text/javascript">//<![CDATA[
+			window.onload = function(){
+				var obj = document.getElementsByTagName('li');
+				var cursor;
+				for(var i=0;i<obj.length;i++){
+					obj[i].onclick=function(){
+						if(cursor)cursor.style.backgroundColor = '#fff';
+						this.style.backgroundColor = 'red';
+						cursor=this;
+					}
+				}
+			}
+		//]]></script>
+
+</html>

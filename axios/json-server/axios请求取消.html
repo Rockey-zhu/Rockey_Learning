@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.3.6/axios.js"></script>
+    <link crossorigin="anonymous" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>基本使用</h2>
+        <button class="btn btn-primary" type="primary">发送GET请求</button>
+        <button class="btn btn-warning" type="success">取消请求</button>
+    </div>
+    <script>
+        //获取按钮
+        const btns = document.querySelectorAll('button');
+
+        const cancel = new AbortController();
+
+        btns[0].onclick = function() {
+                axios({
+                    method: 'GET',
+                    url: 'http://localhost:3000/posts',
+                    //添加配置对象的属性
+                    signal: cancel.signal
+                }).then(res => {
+                    console.log(res)
+                        //将 cancel的值初始化
+                }).catch(res => {
+                    console.log(res)
+                })
+            }
+            //绑定取消请求
+        btns[1].onclick = function() {
+            // cancel the request
+            cancel.abort()
+        }
+    </script>
+</body>
+
+</html>

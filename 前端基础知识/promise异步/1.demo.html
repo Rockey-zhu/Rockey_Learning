@@ -1,0 +1,29 @@
+<!-- 异步（Asynchronous, async）是与同步（Synchronous, sync）相对的概念。 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    // function print() {
+    //     document.getElementById("demo").innerHTML = "RUNOOB!";
+    // }
+    // setTimeout(print, 3000);
+
+    //改写
+    setTimeout(() => {
+        document.getElementById("demo").innerHTML = "RUNOOB"
+    }, 3000);
+</script>
+
+</html>
+<!-- 这段程序中的 setTimeout 就是一个消耗时间较长（3 秒）的过程，它的第一个参数是个回调函数，
+第二个参数是毫秒数，这个函数执行之后会产生一个子线程，子线程会等待 3 秒，然后执行回调函数 "print"，在命令行输出 "RUNOOB!"。 -->

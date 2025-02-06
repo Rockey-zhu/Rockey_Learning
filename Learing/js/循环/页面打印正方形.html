@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<script>
+//9*9正方形
+/*分析
+如何在页面输出一个 *:document.write('*');
+如何在页面输出一行 *：输出一个的代码重复执行 9次
+如何在页面输出九行 *；输出一行的代码重复执行 9次
+*/
+
+//为了输出九行
+ for (n=1;n<=9;n++){
+   //为了输出一行 *
+   for(i=1 ;i<=9;i++){
+      document.write('* ')
+   }
+  //每输出完毕一行 * 以后需要一个换行
+   document.write('</br>')
+}
+
+document.write('</br>')
+
+//递增的9行三角形
+for(y=1;y<=9;y++){
+   for(x=1;x<=y;x++){
+      document.write('* ')
+   }
+   document.write('</br>')
+}
+
+document.write('</br>')
+
+//九九乘法表
+for(p=1;p<=9;p++){
+   for(j=1;j<=p;j++){
+      document.write(j + '*' + p + '=' + j*p + '   ' )
+   }
+   document.write('</br>')
+}
+
+
+
+</script>
+<body>
+   
+</body>
+</html>
+

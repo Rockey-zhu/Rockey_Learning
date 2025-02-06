@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中间人</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleAjax">click-ajax</button>
+
+        <ul>
+            <li v-for="item in datalist" :key="item.id">
+                <img :src="item.img | imgFilter1 | imgFilter2">
+                <div class="explain">
+                    <span>{{item.sc}}</span>
+                    <!-- <li v-for="item in arr" :key="item.id"></li> -->
+                    <span>{{item.nm}}</span>
+                    <span>{{item.star}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        //vue 3 过滤器不支持
+        Vue.filter("imgFilter1", (url) => {
+            return url.replace('w.h/', '')
+        })
+        Vue.filter("imgFilter2", (url) => {
+            return url + '@1l_1e_1c_120w_180h'
+        })
+
+        new Vue({
+            el: "#box",
+            data: {
+                datalist: [],
+                arr: []
+            },
+            methods: {
+                handleAjax() {
+                    axios.get("./json/maoyan.json").then(res => {
+                        console.log(res.data.movieList)
+                        this.datalist = res.data.movieList
+                    })
+                },
+                // handleImg(url) {
+                //     // return 'https://p0.meituan.net/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg@1l_1e_1c_30w_60h'
+                //     return url.replace('w.h/', '') + '@1l_1e_1c_120w_180h'
+                // }
+            },
+        })
+
+        //"http://p0.meituan.net/w.h/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg"
+        //http://p0.pipi.cn/mmdb/25bfd6d72c992367cb537c020675f703a7045.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180
+        //https://p0.meituan.net/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg@1l_1e_1c_128w_180h
+    </script>
+
+</body>
+<style>
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    
+    li {
+        display: flex;
+        border: 1px solid skyblue;
+        border-radius: 10px;
+        background-color: pink;
+        margin: 20px 0px;
+    }
+    
+    .explain {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+</style>
+
+</html>

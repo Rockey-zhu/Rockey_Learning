@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title_right">
+        <div class="majorProducts ActiveProducts" id="select_one" onclick="handSelect()">
+            产品被查询
+        </div>
+        <div class="majorProducts" id="select_two" onclick="handMore()">
+            产品查询
+        </div>
+        <div class="majorProducts" id="select_three" onclick="handImportant()">
+            重点产品被查询
+        </div>
+    </div>
+    <div class="content_body_other">
+        <!-- 产品被查询           产品查询      重点产品被查询 -->
+        <div style="position: relative;">
+            <div class="all_products" id="btnSelects"></div>
+            <div class="all_products" id="btnMoreProduct" style="visibility: hidden;"></div>
+            <div class="all_products" id="btnnewSelect" style="visibility: hidden;"></div>
+        </div>
+    </div>
+    <script>
+        //第二个button切换
+        //产品被查询
+        function handSelect() {
+            console.log("1111111")
+            document.getElementById("btnSelects").style.visibility = "visible";
+            document.getElementById("btnMoreProduct").style.visibility = "hidden";
+            document.getElementById("btnnewSelect").style.visibility = "hidden";
+
+            //按钮颜色切换 字体颜色变化
+            document.getElementById("select_one").classList.add("ActiveProducts");
+            document.getElementById("select_two").classList.remove("ActiveProducts");
+            document.getElementById("select_three").classList.remove("ActiveProducts");
+        }
+
+        //产品查询
+        function handMore() {
+            document.getElementById("btnSelects").style.visibility = "hidden";
+            document.getElementById("btnMoreProduct").style.visibility = "visible";
+            document.getElementById("btnnewSelect").style.visibility = "hidden";
+
+            //按钮颜色切换 字体颜色变化
+            document.getElementById("select_one").classList.remove("ActiveProducts");
+            document.getElementById("select_two").classList.add("ActiveProducts");
+            document.getElementById("select_three").classList.remove("ActiveProducts");
+        }
+
+        // //重点产品被查询
+        function handImportant() {
+            document.getElementById("btnSelects").style.visibility = "hidden";
+            document.getElementById("btnMoreProduct").style.visibility = "hidden";
+            document.getElementById("btnnewSelect").style.visibility = "visible";
+
+            //按钮颜色切换 字体颜色变化
+            document.getElementById("select_one").classList.remove("ActiveProducts");
+            document.getElementById("select_two").classList.remove("ActiveProducts");
+            document.getElementById("select_three").classList.add("ActiveProducts");
+        }
+    </script>
+</body>
+
+<style>
+    #btnSelects {
+        background: red;
+        position: absolute;
+    }
+    
+    #btnMoreProduct {
+        background: yellow;
+        position: absolute;
+    }
+    
+    #btnnewSelect {
+        background: turquoise;
+        position: absolute;
+    }
+    
+    .title_right .majorProducts {
+        width: 168px;
+        height: 40px;
+        background: #F8F8F8;
+        box-shadow: 0rem 0.0625rem 0.1875rem 0rem rgba(0, 0, 0, 0.13);
+        border-radius: 0.4375rem;
+        font-size: 17px;
+        font-weight: 600;
+        color: #524E4E;
+        line-height: 1.75rem;
+        padding: 0.25rem 0.75rem;
+        margin-right: 3.5rem;
+        cursor: pointer;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    .title_right .ActiveProducts {
+        background: linear-gradient(270deg, #3E8F29 0%, #68A010 100%);
+        color: #fff;
+    }
+    
+    .content_body_other .all_products {
+        width: 43rem;
+        height: 22rem;
+        /* position: absolute; */
+        padding-top: 0.625rem;
+    }
+</style>
+
+</html>

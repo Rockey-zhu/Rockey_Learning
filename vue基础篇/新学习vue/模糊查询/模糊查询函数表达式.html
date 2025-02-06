@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext" />
+        <ul>
+            <li v-for="data in test()" :key="data">
+                {{data}}
+            </li>
+        </ul>
+
+        <!-- {{test()}} -->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                mytext: "",
+                datalist: ["aaa", "bbb", "ccc", "dddd", "bbbc", "aaab", "abe"],
+            },
+            methods: {
+                test() {
+                    console.log("test-------")
+                    return this.datalist.filter(item => item.includes(this.mytext))
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

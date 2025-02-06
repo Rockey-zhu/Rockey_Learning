@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <p v-color:red>文字</p>
+            <!-- 在移动端的时候，autofocus会失效，只能通过  选择标签.focus()设置标签自动聚焦 -->
+            <input type="text" v-focus>
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            
+            new Vue({
+                el:'#app',
+                data:{
+
+                },
+                // 自定义局部指令，在当前实例化对象中定义。只能在当前实例化对象内部使用
+                directives:{
+                    // 指令名字:{
+                    //     声明周期函数
+                    // }
+                    color:{
+                        // 钩子函数和全局指令一样
+                        inserted(el,obj){
+                            console.log(obj)
+                            if(obj.arg){
+                                el.style.color=obj.arg
+                            }else{
+                                el.style.color=obj.value
+                            }
+                        }
+                    },
+                    focus:{
+                        inserted(el,obj){
+                            el.focus()
+                        }
+                    }
+
+                }
+            })
+        </script>
+    </body>
+</html>

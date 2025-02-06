@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div0 {
+            width: 100%;
+            height: 500px;
+        }
+        
+        #div0 div {
+            float: left;
+            height: 100px;
+        }
+        
+        #div0 div:nth-child(1) {
+            background-color: red;
+        }
+        
+        #div0 div:nth-child(2) {
+            background-color: rgb(43, 170, 255);
+        }
+        
+        #div0 div:nth-child(3) {
+            background-color: rgb(37, 255, 102);
+        }
+        /*
+            1.width、height 浏览器可视宽度、高度
+            2.device-width  设备屏幕宽度
+            3.device-height 设备屏幕的高度
+        */
+        /*1行三个div*/
+        
+        @media screen and (min-device-width:400px) {
+            #div0 div {
+                width: 33.3%;
+            }
+        }
+        /*2行三个div*/
+        
+        @media screen and (min-device-width:300px) and (max-device-width:399px) {
+            #div0 div {
+                width: 50%;
+            }
+        }
+        /*3行三个div*/
+        
+        @media screen and (max-device-width:299px) {
+            #div0 div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div0">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

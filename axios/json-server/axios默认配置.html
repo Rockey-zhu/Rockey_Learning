@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.3.6/axios.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">基本使用</h2>
+        <button class="btn btn-primary">发送GET请求</button>
+        <button class="btn btn-warning">发送POST请求</button>
+        <button class="btn btn-success">发送PUT请求</button>
+        <button class="btn btn-danger">发送DELETE请求</button>
+        <button class="btn btn-warning">(简写)发送POST请求</button>
+        <div class="box" id="box" style="width: 300px;height: 100px;background: cornsilk;">占位符</div>
+    </div>
+</body>
+<script>
+    //获取按钮
+    const btns = document.querySelectorAll('button');
+
+    //默认配置
+    axios.defaults.method = 'GET'; //设置默认请求类型
+    axios.defaults.baseURL = 'http://localhost:3000'; //设置基础URL
+    axios.defaults.params = {
+        id: 100
+    };
+    axios.defaults.timeout = 3000 //
+        //第一个
+    btns[0].onclick = function() {
+        //发送ajax请求
+        axios({
+            //请求类型
+            method: 'GET',
+            //URL
+            url: 'http://localhost:3000/posts/2',
+        }).then(res => {
+            console.log(res);
+        })
+    }
+</script>
+
+</html>

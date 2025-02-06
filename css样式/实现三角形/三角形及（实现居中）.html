@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+</body>
+
+</html>
+<style>
+    /* div {
+        width: 50px;
+        height: 0px;
+        border-top-color: #ffc107;
+        border-right-color: #00bcd4;
+        border-bottom-color: #e26b6b;
+        border-left-color: #cc7cda;
+        border-width: 50px;
+        border-style: solid;
+    } */
+    
+    .out {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .in {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+</style>
+
+<!--transparent三角形-->
+<!--用 transparent 实现三角形的原理：
+
+首先宽高必须是 0px，通过边框的粗细来填充内容；
+那条边需要就要加上颜色，而不需要的边则用 transparent；
+想要什么样姿势的三角形，完全由上下左右 4 条边的中有颜色的边和透明的边的位置决定；
+等腰三角形：设置一条边有颜色，然后紧挨着的 2 边是透明，且宽度是有颜色边的一半；
+直角三角形：设置一条边有颜色，然后紧挨着的任何一边透明即可。-->

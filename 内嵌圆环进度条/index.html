@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     :root {
+        --primary-light: #39ddfa;
+        --primart: #00abdf;
+        --primary-dark: #008ada;
+        --white: #ffffff;
+        --greyLight-1: #ebf5fc;
+        --greyLight-2: #d5e0f3;
+        --greyLight-3: #c1d9f0;
+        --greyDark: #646b8c;
+    }
+    
+    *,
+    *::before,
+     ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* outline: 1px dashed maroon; */
+    }
+    
+    html {
+        font-size: 10px;
+    }
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #d5e0f3;
+    }
+    
+    .card {
+        width: 34rem;
+        border-radius: 2rem;
+        background: #ebf5fc;
+        box-shadow: 0px 20px 30px rgba(100, 131, 177, 0.2);
+        padding: 5rem;
+        border: 1px soild white;
+    }
+    
+    .card_percent {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    svg {
+        width: 24rem;
+        height: 24rem;
+        z-index: 1;
+        transform: rotate(-180deg);
+    }
+    
+    svg circle {
+        fill: none;
+        stroke-linecap: round;
+        transform: translate(3rem, 3rem);
+        stroke-dasharray: 565.2;
+        stroke-dashoffset: 282.6;
+        transition: all 1s ease;
+        /* 圆的粗细 */
+        stroke-width: 12;
+    }
+    
+    .circle {
+        position: absolute;
+        /* width: 23rem;
+    height: 23rem;
+    box-shadow: 6px 6px 8px #d5e0f3,-6px -6px 8px #ffffff; */
+        border-radius: 50%;
+        background: #ebf5fc;
+    }
+    
+    .circle_medium {
+        width: 20.5rem;
+        height: 20.5rem;
+        box-shadow: inset 8px 8px 10px #d5e0f3, inset -4px -4px 8px #ffffff;
+    }
+    
+    .circle_small {
+        width: 15.5rem;
+        height: 15.5rem;
+        box-shadow: inset 6px 6px 8px #d5e0f3, inset -2px -2px 8px #ffffff;
+    }
+    
+    .card_number {
+        position: absolute;
+        color: #646b8c;
+        font-size: 3.6rem;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card_percent">
+                <svg>
+                    <radialGradient id="gradient" cx="50%" cy="50%" r="90%" fx="50%" fy="50%">
+                        <stop offset="10%" stop-color="#1c263c"></stop>
+                        <stop offset="50%" stop-color="#106a1a"></stop>
+
+                    </radialGradient>
+                    <circle cx='90' cy='90' r='90' id="circle" 
+                    stroke="url(#gradient)"></circle>
+                </svg>
+                <div class="circle"></div>
+                <div class="circle circle_medium"></div>
+                <div class="circle circle_small"></div>
+                <div class="card_number" id="cardnumb">50%</div>
+            </div>
+
+        </div>
+
+        <!-- <div class="form">
+            <input type="text" placeholder="50" id="percent" maxlength="3">
+            <button class="form_btn" onclick="changePercent()">确定</button>
+            <div class="tooltip">
+                <span class="tooltip_text" data-toggle="tooltip">无效数字</span>
+            </div>
+        </div> -->
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+@media screen and (min-width:1920px) {
+    html {
+        font-size: 18px !important;
+    }
+}
+
+@media screen and (min-width:2560px) {
+    html {
+        font-size: 21.4px !important;
+    }
+}
+
+@media screen and (min-width:1463px) {
+    html {
+        font-size: 12.2px !important;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    width: 120rem;
+    height: 1.875rem;
+    background-color: royalblue;
+}
+
+.body {
+    width: 120rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.body .left {
+    width: 60rem;
+    height: 30rem;
+    background-color: salmon;
+}
+
+.body .right {
+    width: 60rem;
+    height: 30rem;
+    background-color: skyblue;
+}
+
+.footer {
+    width: 120rem;
+    height: 2.5rem;
+    background-color: slategray;
+}

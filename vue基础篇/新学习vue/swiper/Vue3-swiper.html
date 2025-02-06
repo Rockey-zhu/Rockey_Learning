@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.js">
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js">
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map">
+    </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<style>
+    .swiper {
+        width: 500px;
+        height: 400px;
+    }
+</style>
+
+<body>
+
+    <div id="box">
+        <!-- <swiper :key="datalist.length" :loop="false">
+            <swiper-item v-for="data in datalist" :key="data">
+                <img :src="data" />
+            </swiper-item>
+
+        </swiper> -->
+        {{myname}}
+        <navbar myname="aaaaa">
+            <div>11111111</div>
+        </navbar>
+
+        <sidebar></sidebar>
+    </div>
+    <script>
+        // new Vue({
+        //     el: "#box",
+        //     data: {
+        //         datalist: []
+        //     },
+        //     mounted() {
+        //         //ajax
+        //         setTimeout(() => {
+        //                 this.datalist = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"]
+
+        //             }, 2000)
+        //             //初始化过早   
+        //     },
+        // })
+        var obj = {
+            data() {
+                return {
+                    myname: "xunuo"
+                }
+            },
+            methods: {
+
+            },
+            computed: {
+
+            }
+        }
+        var app = Vue.createApp(obj)
+        app.component("navbar", {
+            props: ["myname"],
+            template: `
+                <div>
+                    navbar-{{myname}}
+                    <slot></slot>    
+                </div>
+            `
+        })
+        app.component("sidebar", {
+            template: `
+                <div>sidebar</div>
+            `
+        })
+        app.mount("#box")
+    </script>
+</body>
+
+</html>

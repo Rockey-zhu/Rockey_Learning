@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css"></style>
+</head>
+
+<body>
+    <!--头部img-->
+    <div class="head">
+        <div class="img"><img src="./img/head_bg.png"></div>
+    </div>
+    <div class="another">
+
+        <!--切换按钮区域-->
+        <div class="btn_change">
+            <div class="btn_one" id="1" onclick="handclickOne()">按钮一</div>
+            <div class="btn_two" id="2" onclick="handclickTwo()">按钮二</div>
+            <div class="btn_three" id="3" onclick="handclickThree()">按钮三</div>
+        </div>
+        <!-- <div style="position: relative;"> -->
+        <!--页面一-->
+        <div class="content_one" id="Page_one">
+            <div class="body">
+                <div class="float">
+                    <div class="KPI_nav">
+                        <div class="nav_one">销售</div>
+                        <div class="nav_two">销售达成</div>
+                        <div class="nav_three">消化进度</div>
+                    </div>
+                </div>
+                <!--主体图表-->
+                <div class="tbody" id="tbody_one">
+                    <div class="map_one">地图一</div>
+                    <div class="map_two">地图二</div>
+                    <div class="map_three">地图三</div>
+                </div>
+                <!--页尾logo-->
+                <div class="footer"><img src="./img/logo_600.png"></div>
+            </div>
+        </div>
+
+        <!--页面二-->
+        <div class="content_two" id="Page_two" style="display: none;">
+            <div class="body">
+                <div class="float">
+                    <div class="KPI_nav">
+                        <div class="nav_one">销售</div>
+                        <div class="nav_two">销售达成</div>
+                        <div class="nav_three">消化进度</div>
+                    </div>
+                </div>
+                <!--主体图表-->
+                <div class="tbody" id="tbody_two">
+                    <div class="map_one">地图一</div>
+                    <div class="map_two">地图二</div>
+                    <div class="map_three">地图三</div>
+                </div>
+
+                <!--页尾logo-->
+                <div class="footer"><img src="./img/logo_600.png"></div>
+            </div>
+        </div>
+
+        <!--页面三-->
+        <div class="content_three" id="Page_three" style="display: none;">
+            <!--主体图表-->
+            <div class="tbody" id="tbody_two">
+                <div class="map_one">地图一</div>
+                <div class="map_two">地图二</div>
+                <div class="map_three">地图三</div>
+            </div>
+
+            <!--页尾logo-->
+            <div class="footer"><img src="./img/logo_600.png"></div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: auto;
+    }
+    
+    .head {
+        width: 100%;
+        height: 200px;
+        position: absolute;
+    }
+    
+    .head img {
+        width: 100%;
+    }
+    
+    .another {
+        background-color: rgb(216, 216, 216);
+        width: 100%;
+        position: relative;
+        top: 220px;
+        height: 100%;
+    }
+    
+    .body {
+        width: 100%;
+        position: relative;
+        top: -60px;
+    }
+    
+    .float {
+        /* position: relative; */
+        bottom: 20px;
+        width: 98%;
+        background-color: white;
+        border-top: 1px solid white;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        z-index: 999;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .btn_change {
+        width: 98%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: white;
+        margin-bottom: 10px;
+        position: relative;
+        bottom: 50px;
+        margin: 0 auto;
+    }
+    
+    .btn_change .btn_one {
+        flex: 1;
+        width: 100%;
+        background-color: yellowgreen;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn_change .btn_two {
+        width: 100%;
+        flex: 1;
+        background-color: red;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn_change .btn_three {
+        width: 100%;
+        flex: 1;
+        background-color: skyblue;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .KPI_nav {
+        width: 96%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    
+    .KPI_nav .nav_one {
+        width: 100%;
+        height: 40px;
+        background-color: blueviolet;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .content_two .KPI_nav .nav_one {
+        background-color: skyblue;
+    }
+    
+    .KPI_nav .nav_two {
+        width: 100%;
+        height: 40px;
+        background-color: blueviolet;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .content_two .KPI_nav .nav_two {
+        background-color: skyblue;
+    }
+    
+    .KPI_nav .nav_three {
+        width: 100%;
+        height: 40px;
+        background-color: blueviolet;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .content_two .KPI_nav .nav_three {
+        background-color: skyblue;
+    }
+    
+    .tbody {
+        width: 98%;
+        /* height: 500px; */
+        background-color: white;
+        border-radius: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .content_three .tbody {
+        position: relative;
+        bottom: 50px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    
+    .tbody .map_one {
+        width: 96%;
+        height: 400px;
+        /* background-color: skyblue; */
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .tbody .map_two {
+        width: 96%;
+        height: 400px;
+        /* background-color: skyblue; */
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .tbody .map_three {
+        width: 96%;
+        height: 400px;
+        /* background-color: skyblue; */
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 5px;
+    }
+    
+    .footer {
+        width: 96%;
+        position: relative;
+        top: 20px;
+    }
+    
+    .content_three .footer {
+        width: 96%;
+        position: relative;
+        top: -25px;
+    }
+    
+    .footer img {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<script src="Major.js"></script>
+<script>
+    // function handclickOne() {
+    //     document.getElementById("Page_one").style.visibility = "";
+    //     document.getElementById("Page_two").style.visibility = "hidden";
+    //     document.getElementById("Page_three").style.visibility = "hidden";
+    // }
+
+    // function handclickTwo() {
+    //     document.getElementById("Page_one").style.visibility = "hidden";
+    //     document.getElementById("Page_two").style.visibility = "";
+    //     document.getElementById("Page_three").style.visibility = "hidden";
+    // }
+
+    // function handclickThree() {
+    //     document.getElementById("Page_one").style.visibility = "hidden";
+    //     document.getElementById("Page_two").style.visibility = "hidden";
+    //     document.getElementById("Page_three").style.visibility = "";
+    // }
+
+
+
+
+    // id.handclick() = function() {
+    //     if (id === "1") {
+    //         console.log(11111111)
+    //     } else if (id === "2") {
+    //         console.log(22222222)
+    //     } else if (id === "3") {
+    //         console.log(33333333)
+    //     } else {
+    //         return false;
+    //     }
+    // }
+</script>
+
+</html>

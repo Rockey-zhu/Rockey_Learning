@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+.sunyi {
+    position: absolute;
+    width: 100%;
+}
+
+.sunyi .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sunyi .header .headerName {
+    width: 860px;
+    height: 45px;
+    font-size: 38px;
+    font-weight: 600;
+    color: #524E4E;
+    line-height: 40px;
+    margin: 15px 15px;
+}
+
+.sunyi .header .pageChange .imgContent {
+    padding-bottom: 3px;
+}
+
+.sunyi .header .pageChange {
+    width: 420px;
+    padding-top: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.sunyi .header .pageChange .pl {
+    width: 80px;
+    height: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #979797;
+    line-height: 15px;
+}
+
+.sunyi .header .pageChange .sales {
+    width: 100px;
+    height: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #979797;
+    line-height: 15px;
+}
+
+.sunyi .header .pageChange .pl .activeText {
+    height: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #284354;
+    line-height: 15px;
+}
+
+.sunyi .line {
+    display: flex;
+}
+
+.sunyi .line .color1 {
+    width: 34%;
+    height: 2px;
+    background-color: #559500;
+}
+
+.sunyi .line .color2 {
+    width: 33%;
+    height: 2px;
+    background-color: #FB951E;
+}
+
+.sunyi .line .color3 {
+    width: 33%;
+    height: 2px;
+    background-color: #69BB91;
+}
+
+.sunyi .toggleBtn .profitLoss {
+    position: absolute;
+    right: 5%;
+    width: 68px;
+    height: 32px;
+    line-height: 32px;
+    /* margin-right: 10px; */
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    background: #ECF0F5;
+    cursor: pointer;
+    z-index: 998;
+    margin-top: 7px;
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+.sunyi .toggleBtn .capital {
+    position: absolute;
+    right: 1%;
+    width: 68px;
+    height: 32px;
+    line-height: 32px;
+    /* margin-right: 10px; */
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    background: #ECF0F5;
+    cursor: pointer;
+    z-index: 998;
+    margin-top: 7px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.sunyi .toggleBtn .active {
+    color: #FFFFFF;
+    background: #649E0B;
+}
+
+.a1 {
+    position: absolute;
+}
+
+.a1 #box1 {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+
+.a2 {
+    left: 0;
+    position: absolute;
+}
+
+.a2 #box2 {
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+    left: 0;
+}

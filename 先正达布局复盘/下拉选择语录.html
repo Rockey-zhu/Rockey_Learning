@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="option">
+        <label for="fruit">水果：</label>
+        <select name="fruit" id="fruit">
+          <option selected="selected">请选择</option>
+          <option value="苹果">苹果</option>
+          <option value="橘子">橘子</option>
+          <option value="梨子">梨子</option>
+          <option value="西瓜">西瓜</option>
+          <option value="哈密瓜">哈密瓜</option>
+        </select>
+    </div>
+    <ul id="detail">
+        <li>一天一苹果，医生远离我</li>
+        <li>橘子皮可以煮汤</li>
+        <li>冰糖雪梨好好吃</li>
+        <li>西瓜是我的最爱</li>
+        <li>日本哈密瓜好好吃</li>
+    </ul>
+</body>
+<style>
+    #detail li {
+        display: none;
+    }
+</style>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    var x = document.getElementById("selected").selectedIndex;
+    console.log("1111", selectedIndex)
+    fruit.onchange = function() {
+        var ind = document.getElementById("fruit").selectedIndex;
+        if (ind == 0) {
+            $('#detail li').hide();
+        } else {
+            $('#detail li').eq(ind - 1).show().siblings().hide();
+        }
+    }
+</script>
+
+</html>

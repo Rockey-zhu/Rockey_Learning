@@ -1,0 +1,54 @@
+<!--  1）通过css var() 函数，定义颜色变量 
+    2）css中引入var变量 
+    3）需要换肤时，通过js修改body的颜色变量 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div class="test" id="test" onclick="handleclick()"></div>
+</body>
+<style>
+    .test {
+        width: 500px;
+        height: 100px;
+        background: green;
+    }
+    
+    .active {
+        background: var(--color-primary);
+    }
+</style>
+<script>
+    let styleVar = {
+        '--color-white': '#ffffff',
+        '--color-black': '#000000',
+        '--color-primary': '#f5ba63',
+        '--color-success': '#35b55f',
+        '--color-warning': '#ffaa0e',
+        '--color-danger': '#ee5640',
+        '--color-info': '#e6e6e6',
+        '--color-main': '#256dff',
+        '--color-neutral': '#15181a',
+        '--color-tip': '#2b2b2c',
+        '--color-special': '#202020'
+
+    };
+    for (let i in styleVar) {
+        document.body.style.setProperty(i, styleVar[i])
+    };
+
+    function handleclick() {
+        document.getElementById("test").classList.add("active");
+    }
+</script>
+
+</html>

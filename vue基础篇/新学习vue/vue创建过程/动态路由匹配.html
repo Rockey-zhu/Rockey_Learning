@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 300px;
+            display: flex;
+        }
+        
+        ul li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+        }
+        
+        ul li a {
+            text-decoration: none;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            background: grey;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li>
+                <router-link to="/home">home</router-link>
+                <router-link to="/news">news</router-link>
+            </li>
+        </ul>
+        <div class="box">
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <template id='new'>
+			<div>
+				<h2>新闻列表</h2>
+				<ul>
+					<li><router-link to="/news/1">新闻1</router-link></li>
+					<li><router-link to="/news/2">新闻2</router-link></li>
+				</ul>
+			</div>
+		</template>
+
+    <!-- 下面是新闻最终页的模板 -->
+    <template id="newList">
+			<div>
+				<h3>新闻最终页</h3>
+				<p>这是传递过来的id：{{this.$route.params.id}}</p>
+			</div>
+		</template>
+    <script>
+        const Home = {
+            template: '<h2>首页</h2>'
+        };
+        const News = {
+            template: '#new'
+        };
+
+        //因为点击某个新闻后要跳转到一个新的页面，所以也需要一个组件
+        const NewList = {
+            template: '#newList'
+        };
+
+        const routes = [{
+                path: '/home',
+                component: Home
+            }, {
+                path: '/news',
+                component: News
+            }, {
+                path: '/news/:id',
+                component: NewList
+            },
+            /*
+            	1、要匹配一个动态路由的话就用:id。动态路径的参数
+            	2、这个设置完了以后，参数值会被设置到this.$route.params
+             */
+        ];
+
+        const router = new VueRouter({
+            routes
+        });
+
+        new Vue({
+            el: '#app',
+            router,
+        });
+
+        router.push('/home');
+    </script>
+</body>
+
+</html>

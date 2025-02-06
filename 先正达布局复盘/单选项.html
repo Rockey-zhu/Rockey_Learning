@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="radio" id="btn-one" name="radio" checked onclick="handleBtn_one()">
+        <label for="radio1" class="cs-radio"></label>
+        <label for="radio1">页面一</label>
+
+        <input type="radio" id="btn-two" name="radio" onclick="handleBtn_two()">
+        <label for="radio2" class="cs-radio"></label>
+        <label for="radio2">页面二</label>
+    </div>
+    <div style="width:100% ;height:400px;background:rebeccapurple;position: relative;">
+        <div id="page_one" style="width:100% ; height:300px;align-items: center;background-color: yellow;position: absolute;margin-top: 50px;"></div>
+        <div id="page_two" style="width:100% ; height:300px;align-items: center;background-color: pink;position: absolute;margin-top: 50px;visibility: hidden;"></div>
+    </div>
+</body>
+<style>
+    /* 单复选框 */
+    
+    [type="radio"],
+    [type="checkbox"] {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        cursor: pointer;
+    }
+    /* 单选框 */
+    
+    .cs-radio {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid gray;
+        border-radius: 50%;
+        background-color: #fff;
+        box-sizing: border-box;
+        vertical-align: -.5ex;
+        user-select: none;
+        transition: border-color .2s;
+        overflow: hidden;
+    }
+    /* :focus+.cs-radio,
+     :checked+.cs-radio {
+        border-color: deepskyblue;
+    } */
+    
+     :focus+.cs-radio {
+        border-color: #595959;
+    }
+    
+     :checked+.cs-radio {
+        border: 5px solid #009845;
+        border-color: #009845;
+    }
+    
+     :checked+.cs-radio::before {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 50%;
+        margin: 5px auto 0;
+        border-radius: 50%;
+        background-color: white;
+    }
+</style>
+<script>
+    function handleBtn_one() {
+        document.getElementById("page_one").style.visibility = "visible";
+        document.getElementById("page_two").style.visibility = "hidden";
+    }
+
+    function handleBtn_two() {
+        document.getElementById("page_one").style.visibility = "hidden";
+        document.getElementById("page_two").style.visibility = "visible";
+    }
+</script>
+
+</html>

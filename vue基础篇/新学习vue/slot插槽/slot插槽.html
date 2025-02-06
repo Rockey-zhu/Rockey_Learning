@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slot插槽</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <child>
+            <div slot="a">111111111</div>
+            <div slot="b">222222222</div>
+            <div slot="c">333333333</div>
+            <div>444444444</div>
+        </child>
+
+        <navbar>
+            <button slot="left">aaaaaa</button>
+            <!-- <button slot="right">bbbbb</button> -->
+        </navbar>
+
+
+    </div>
+    <script>
+        Vue.component("navbar", {
+            template: `
+                <div>
+                    <slot name="left"></slot>
+                    <span>navbar</span>
+                    <slot name="right"></slot>
+                </div>
+            `
+        })
+        Vue.component("child", {
+            template: `
+                <div>
+                    child
+                    <slot name="a"></slot>
+                    <slot name="b"></slot>
+                    <slot name="c"></slot>
+                    <slot></slot>
+                </div>`
+        })
+        new Vue({
+            el: "#box",
+            data() {
+                return {
+
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*注释一*/
+div {
+  height: 100px;
+  width: 200px;
+  border: 2px solid black;
+}
+.border {
+  border: 2px solid black;
+}
+.border_02_test {
+  border: 10px solid black;
+}
+.border_03_test1 {
+  border: 10px solid black;
+}
+.border_03_test2 {
+  border: 20px solid red;
+}
+.radius_test1 {
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.radius_test2 {
+  -webkit-border-radius: 1px 2px 3px 4px;
+  -moz-border-radius: 1px 2px 3px 4px;
+  border-radius: 1px 2px 3px 4px;
+}
+.sanjiao {
+  border-width: 10px;
+  border-color: transparent transparent #ff0000 transparent;
+  border-style: dashed dashed solid dashed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+div {
+  padding: 33px;
+}
+.list {
+  width: 600px;
+  margin: 30px auto;
+  padding: 0px;
+  list-style: none;
+}
+.list li {
+  height: 30px;
+  line-height: 30px;
+  background-color: #B5B4B4;
+  margin-bottom: 5px;
+}
+.list a {
+  float: left;
+}
+.list a:hover {
+  color: red;
+}
+.list span {
+  float: right;
+}

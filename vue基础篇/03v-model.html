@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 原生的js如何实现v-model的效果 -->
+            <!-- v-model可以用来获取表单元素的值 -->
+            <!-- 修改msg的值，表单元素的值也会有变化。双向数据绑定 -->
+            <!-- 发布评论 -->
+            <input type="text" v-model="msg"><br><br>
+            {{msg}}
+            <button v-on:click="change()">按钮</button>
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    msg:''
+                },
+                methods:{
+                    change(){
+                        this.msg+=1;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

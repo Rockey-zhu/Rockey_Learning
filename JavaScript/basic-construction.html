@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    alert('hello');
+    alert('world');
+    alert(3 +
+        1 +
+        2);
+    //javaScript 将换行符理解成“隐式”的分号。这也被称为 自动分号插入。
+    alert("There will be well");
+
+    [1, 2].forEach(alert)
+        //无分号的变体（variant）会出现报错，是因为 JavaScript 并不会在方括号 [...] 前添加一个隐式的分号。
+        //所以，因为没有自动插入分号，第一个例子中的代码被视为了一条简单的语句，我们从引擎看到的是这样的：
+        //alert("There will be an error")[1, 2].forEach(alert)
+</script>
+
+</html>

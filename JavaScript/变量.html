@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let message;
+        // message='Hello';
+
+        // alert(message);
+
+        //简写
+        // let message = 'Hello!' //定义变量并且赋值
+
+        // alert(message);
+
+        // let user = 'John',
+        //     age = 25,
+        //     message = 'hello';
+
+        //var而不是let
+        //var 关键字与 let 大体 相同，也用来声明变量，但稍微有些不同，也有点“老派”。
+
+        //数据盒子模型(多次更改盒子的值)
+        // let message;
+        // message = 'Hello!';
+        // message = 'World!'; //值改变了
+        // alert(message)
+
+        //但是当值改变的时候,之前的数据也从变量中删除了
+        //可以声明两个变量,然后将其中一个变量的数据拷贝到另一个变量
+        let hello = 'Hello world!';
+        let message;
+        // 将字符串 'Hello world' 从变量 hello 拷贝到 message
+        message = hello;
+
+        //现在两个变量保存着相同的数据
+        alert(hello); // Hello world!
+        alert(message); // Hello world!
+
+        //声明两次会触发error
+        let message = "this";
+        //重复'let'会导致error
+        let message = "that"; // // SyntaxError: 'message' has already been declared
+        //我们对同一个变量应该只声明一次，之后在不使用 let 的情况下对其进行引用。
+
+        //变量命名
+        //         JavaScript 的变量命名有两个限制：
+        // 变量名称必须仅包含字母，数字，符号 $ 和 _。
+        // 首字符必须非数字。
+        //例如:
+        let useName;
+        let test123;
+
+        //************总结*********
+        //         我们可以使用 var、let 或 const 声明变量来存储数据。
+
+        // let — 现代的变量声明方式。
+        // var — 老旧的变量声明方式。一般情况下，我们不会再使用它。但是，我们会在 旧时的 "var" 章节介绍 var 和 let 的微妙差别，以防你需要它们。
+        // const — 类似于 let，但是变量的值无法被修改。
+        // 变量应当以一种容易理解变量内部是什么的方式进行命名。
+    </script>
+</body>
+
+</html>

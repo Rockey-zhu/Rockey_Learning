@@ -1,0 +1,48 @@
+<!----rem+vw布局是手机端常见的布局方案-->
+
+<!-- rem布局的原理：
+
+本质是等比缩放，rem作用于根元素字体大小
+
+1）假设屏幕宽度为750px，将屏幕平分为10份，1rem=75px，根元素的fontSize大小为75px -->
+
+<style>
+    html {
+        font-size: 75px;
+    }
+    
+    div {
+        width: 1rem;
+    }
+</style>
+<script>
+    // 设置html的font-size 
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px'
+</script>
+
+<!-- rem布局的缺点
+
+字体并不合适使用rem, 字体的大小和字体宽度，并不成线性关系，会出现随着屏幕的变大，字体变的越来越大，所以需要结合媒体查询来调整字体大小 -->
+
+
+<!-- rem+vw布局
+优势
+
+1）使用纯css的方式来实现，避免使用js动态计算html根元素font-size大小
+2）结合使用媒体查询，解决宽屏下（如ipad）字体过大的问题 -->
+
+<!-- 1）设计稿为750px时，rootValue设置为75，则屏幕宽为10rem，1rem=75px，根元素的fontSize大小为75px
+2）屏幕总共有100vw，所以1vw为7.5px ，10vw为75px， 得出1rem为10vw， 故得到根元素的fontSize为10vw -->
+<!-- <style>
+    @base_fontSize: 10vw;
+    html {
+        font-size: @base_fontSize;
+    }
+    
+    // 使用媒体查询，解决ipad屏幕下（宽屏）字体过大的问题
+    @media screen and (min-width: 560px) {
+        html {
+            font-size: @base_fontSize * 0.7
+        }
+    }
+</style> -->

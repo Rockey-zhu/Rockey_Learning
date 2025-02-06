@@ -1,0 +1,92 @@
+<!-- new Vue({
+    components: {
+        tagName: options,
+        tagName: options,
+    }
+})
+
+// 1.参数与全局组件一样
+// 2.全局组件是通过Vue.component生成的 （没有s）,局部组件用的是components （带s） -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conNav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            height: 120px;
+            line-height: 120px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+        
+        .conNav a {
+            font-size: 30px;
+            color: #f39800;
+            display: block;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <nav-bar></nav-bar>
+        <!-- <nav-list></nav-list> -->
+        <!--标签对调用-->
+    </div>
+
+    <div id="box">
+
+    </div>
+
+    <template id="navTemplate">
+        <ul class="conNav">
+            <li><a href="#" @click="log">{{text[0]}}</a></li>
+            <li><a href="#">{{text[1]}}</a></li>
+            <li><a href="#">汤类</a></li>
+            <li><a href="#">面食</a></li>
+            <li><a href="#">饮料</a></li>
+            <li><a href="#">其他</a></li>
+        </ul>
+    </template>
+
+    <script>
+        new Vue({
+            el: '#app',
+            components: {
+                navBar: { //组件的名字  第一个局部组件
+                    template: '#navTemplate',
+                    data() {
+                        return {
+                            text: ['热菜', '凉菜']
+                        }
+                    },
+                    methods: {
+                        log() {
+                            console.log('你点击了导航!')
+                        }
+                    },
+                },
+                navList: { //第二个局部组件
+
+                }
+            }
+        })
+
+        new Vue({
+            el: '#box'
+        })
+    </script>
+</body>
+
+</html>
